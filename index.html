@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" ng-app="lynas">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,182 +12,119 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="topLiner"></div>
+    <style>
+        .active{
+            border: 1px solid red;
+            border-radius: 10%;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="topLiner"></div>
 
 
+<!--/.nav-start -->
 
-
-
-
-
-
-
-
-
-  <!--/.nav-start -->
-
-    <div role="navigation" class="navbar navbar-default topNav">
-      <div class="container">
+<div role="navigation" class="navbar navbar-default topNav">
+    <div class="container">
         <div class="navbar-header">
-          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="index.html" class="navbar-brand">
-            <h1>LynAs Sazzad</h1>
-            <span>Software Developer / System Architect</span>
-          </a>
+            <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href ng-click="tab = 'main'" class="navbar-brand">
+                <h1>LynAs Sazzad</h1>
+                <span>Software Developer / System Architect</span>
+            </a>
         </div>
-        <div class="navbar-collapse collapse navbar-right">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="resume.html">Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="skill.html">Skill</a></li>
-            <li><a href="about.html">Contact</a></li>
-            
-            <!--
-            <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>-->
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-    <!--/.nav-end -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="grayBG">
-    <div class="container myFeature">
-      <div class="row">
-        <div class="col-lg-6">
-          <img src="img/01.jpg" class="my-img img-circle pull-right">
+        <div class="navbar-collapse collapse navbar-right" ng-init="tab ='main'">
+            <ul class="nav navbar-nav" >
+                <li  ng-class="{active:tab ==='main'}"><a href ng-click="tab = 'main'">Home</a></li>
+                <li  ng-class="{active:tab ==='exp'}"><a href ng-click="tab = 'exp'">Experience</a></li>
+                <li  ng-class="{active:tab ==='proj'}"><a href ng-click="tab = 'proj'">Projects</a></li>
+                <li  ng-class="{active:tab ==='skl'}"><a href ng-click="tab = 'skl'">Skill</a></li>
+                <li  ng-class="{active:tab ==='con'}"><a href ng-click="tab = 'con'">Contact</a></li>
+            </ul>
         </div>
-        <div class="col-lg-6">
-          <!--ul class="feature">
-            <li><a href="#" class="resume img-circle">MY RESUME</a></li>
-            <li><a href="#" class="work img-circle">MY WORK</a></li>
-            <li><a href="#" class="skill img-circle">MY SKILLS</a></li>
-          </ul-->
-			<div class="featureBtn">
-                <h1>Hello</h1>
-                <h5>a bit about me:</h5>
-                
-                <a href="resume.html"  class="btn btn-danger btn-circle btn-lg"><div class="projectCount">MY EXPERIENCE</div></a>
-                <a href="projects.html"  class="btn btn-info btn-circle btn-lg"><div class="projectCount">MY PROJECTS</div></a>
-                <a href="skill.html"  class="btn btn-success btn-circle btn-lg"><div class="projectCount">MY SKILL</div></a>
-                
-                <div class="clearfix">&nbsp;</div>
-                <p>My name is Md Sazzad Islam, and I’m a 25 year old Software Engineer.  Everyone calls me Sazzad, Some of friends also know me as LynAs</p>
-                <p>I spend my work days writing Java or doing tech support, and spare time playing computer / console games.  I live in Dhaka, Bangladesh and am the System Architect of a small but expanding software company called <a href="http://www.springine.com/" target="_blank">Springine</a>.</p>
-			</div>
-        </div>
-      </div>
+        <!--/.nav-collapse -->
     </div>
 </div>
+<!--/.nav-end -->
 
+<div class="mid_contain">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="panel" ng-show="tab === 'main'">
+        <temp-index></temp-index>
+    </div>
+    <div class="panel" ng-show="tab === 'exp'">
+        <temp-resume></temp-resume>
+    </div>
+    <div class="panel" ng-show="tab === 'proj'">
+        <temp-project></temp-project>
+    </div>
+    <div class="panel" ng-show="tab === 'skl'">
+        <temp-skill></temp-skill>
+    </div>
+    <div class="panel" ng-show="tab === 'con'">
+        <temp-about></temp-about>
+    </div>
+</div>
 
 
 <!--/footer-start -->
 
 <div class="footer">
-	<div class="container">
+    <div class="container">
         <div class="row">
-              <div class="col-md-3">
+            <div class="col-md-3">
                 <ul>
                     <li>
                         <img src="img/c.png" class="img-circle" alt="the-brains">
                     </li>
                     <li>
                         <h4 class="footertext">Call</h4>
+
                         <p class="footertext">T: +88 01716 881343</p>
                     </li>
-                  </ul>
-              </div>
-              <div class="col-md-3">
+                </ul>
+            </div>
+            <div class="col-md-3">
                 <ul>
                     <li>
                         <img src="img/m.png" class="img-circle" alt="the-brains" width="40" height="40">
                     </li>
                     <li>
                         <h4 class="footertext">Contact</h4>
+
                         <p class="footertext"><a href="mailto:szlynas@gmail.com">szlynas@gmail.com</a></p>
                     </li>
-                  </ul>
-              </div>
-              <div class="col-md-3">
+                </ul>
+            </div>
+            <div class="col-md-3">
                 <ul>
                     <li>
-                        <img src="img/p.png" class="img-circle" alt="the-brains" >
+                        <img src="img/p.png" class="img-circle" alt="the-brains">
                     </li>
                     <li>
                         <h4 class="footertext">Follow me</h4>
+
                         <p class="footertext">
-                        	<ul>
-                            	<li><a href="https://www.facebook.com/sazzadislam"><img src="img/f.png"></a></li>
-                                <li><a href="https://twitter.com/szLynAs"><img src="img/tw.png"></a></li>
-                                <li><a href="https://plus.google.com/+LynAsSazzad"><img src="img/gp.png"></a></li>
-                            </ul>
+                        <ul>
+                            <li><a href="https://www.facebook.com/sazzadislam"><img src="img/f.png"></a></li>
+                            <li><a href="https://twitter.com/szLynAs"><img src="img/tw.png"></a></li>
+                            <li><a href="https://plus.google.com/+LynAsSazzad"><img src="img/gp.png"></a></li>
+                        </ul>
                         </p>
                     </li>
-                  </ul>
-              </div>
-              <div class="col-md-3">
+                </ul>
+            </div>
+            <div class="col-md-3">
                 <ul>
                     <li>
                         <img src="img/c.png" class="img-circle" alt="the-brains">
@@ -195,35 +132,75 @@
                     <li>
                         <p class="footertext">© 2014 by LynAs Sazzad.<br> Design idea<br> by Wix.com</p>
                     </li>
-                  </ul>
-              </div>
+                </ul>
             </div>
-            
+        </div>
+
     </div>
 </div>
 
 <!--/footer-end -->
 
 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-2.1.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+<script>
+    var lynas = angular.module('lynas',[]);
+    lynas.directive('tempIndex',function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'template/temp_index.html'
+        }
 
+    });
+    lynas.directive('tempResume',function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'template/temp_resume.html'
+        }
 
+    });
+    lynas.directive('tempProject',function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'template/temp_project.html'
+        }
 
+    });
+    lynas.directive('tempSkill',function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'template/temp_skill.html'
+        }
 
+    });
+    lynas.directive('tempAbout',function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'template/temp_about.html'
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-2.1.0.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+    });
+</script>
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
