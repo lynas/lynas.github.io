@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+
+<style type = "text/css" scoped>
+    h1 {
+        color: red
+    }
+</style>
+<table border="1px solid black" style="width: 100%">
+    <tbody>
+    <tr>
+        <td>
+            <h1>command</h1>
+        </td>
+        <td>
+            <h1>Description</h1>
+        </td>
+    </tr>
+    <tr>
+        <td>git init
+        </td>
+        <td>initialize git repository
+        </td>
+    </tr>
+    <tr>
+        <td>git add .
+        </td>
+        <td>add all changed file to staging are
+        </td>
+    </tr>
+    <tr>
+        <td>git commit -m "my message"
+        </td>
+        <td>commit all changes to the local repository
+        </td>
+    </tr>
+    <tr>
+        <td>git pull
+        </td>
+        <td>pull latest changes from repository
+        </td>
+    </tr>
+    <tr>
+        <td>git push
+        </td>
+        <td>push all changes to remote repository
+        </td>
+    </tr>
+
+    <tr>
+        <td>git config --global user.name "YOUR NAME"</td>
+        <td>setup user name</td>
+    </tr>
+
+    <tr>
+        <td>
+            git config --global user.email "YOUR EMAIL ADDRESS"
+        </td>
+        <td>
+            setup email
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git status
+        </td>
+        <td>
+            see changed file
+        </td>
+    </tr>
+    <tr>
+        <td>
+            git diff
+        </td>
+        <td>
+            see changed file in details
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td>
+            git stash save "my message"
+        </td>
+        <td>
+            save my changes to the stash
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git stash pop
+        </td>
+        <td>
+            get the last stash and add it to the current branch
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git stash pop stash_name
+        </td>
+        <td>
+            get specific stash and add it to the current branch
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git checkout -- file_name
+        </td>
+        <td>
+            get file_name file from last commited checkout
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git reset HEAD file_name
+
+        </td>
+        <td>
+            un stage file_name from staging area
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git branch
+        </td>
+        <td>
+            list of my branch (current branch will be marked *branch_name)
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git branch branch_name
+        </td>
+        <td>
+            create a branch with name branch_name
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git checkout branch_name
+        </td>
+        <td>
+            switch to the branch_name from current branch
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git branch -d branch_name
+        </td>
+        <td>
+            safe delete current branch( make sure to switch to a different branch before deleting a branch)<br />
+            if use -D then it will be force deletion of a branch
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git merge branch_name
+        </td>
+        <td>
+            merge branch_name branch to the current branch
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git diff branch_name1...branch_name2
+        </td>
+        <td>
+            difference between two branch
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git checkout 234234rwerwe
+        </td>
+        <td>
+            git checkout to specific position (last string is sha value which we can get by git log --oneline)<br />
+            it will put my changes to the staging area right before making any commit
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git diff --staged
+        </td>
+        <td>
+            current diff in the staged area
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git revert sha_value
+        </td>
+        <td>
+            revert to the position before making changes
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git reset --soft sha_value
+        </td>
+        <td>
+            (<b style="color: red">make sure u do git log and copy latest sha_values</b> in case you want to go to recent value)
+            <br />
+            make the sha_value position as current head all commits after sha_value is gone
+            but all changes will available in staging area
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git reset --mixed sha_value
+        </td>
+        <td>
+            (<b style="color: red">make sure u do git log and copy latest sha_values</b> in case you want to go to recent value)
+            <br />
+            make the sha_value position as current head all commits after sha_value is gone
+            but all changes will available<br /> in working directory means modified position of the file
+            we ware working on just before git add
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            create .gitignore file at root
+        </td>
+        <td>
+            for ignoring file in git tracking
+            e.g. <br />
+            <ul>
+                <li>
+                    test.txt --> un track test.txt
+                </li>
+                <li>
+                    *.txt --> un track any file that ends with .txt
+                </li>
+                <li>
+                    folder1/folder2/ --> un track anything inside folder2 which resides inside folder1
+                </li>
+                <li>
+                    !test.txt --> do track test.txt although *.txt is inside this file
+                </li>
+            </ul>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git rm --cached filename
+        </td>
+        <td>
+            stop tracking filename from now one (file will be in our working directory but wont be tracked
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git log --grep="temp"
+        </td>
+        <td>
+            show log any commit that has temp keyword in it
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git log --since = 2.days
+        </td>
+        <td>
+            show log anything within two days
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git log --author="sazzad"
+        </td>
+        <td>
+            show log all commit done by sazzad
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git push -u origin feature_branch_name
+        </td>
+        <td>
+            push my branch to remote repo
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git checkout -b feature_branch_name origin/feature_branch_name
+        </td>
+        <td>
+            if you want to work on that branch, you'll need to create a local tracking branch
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git log --pretty=format:"%h%x09%an%x09%ad%x09%s"
+        </td>
+        <td>
+            Minified log
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git log --graph --oneline --decorate --all
+        </td>
+        <td>
+            pretty way look at log
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git branch --merged
+        </td>
+        <td>
+            this will show list of branches that are included in the current branch. if this shows 3 branches it means
+            <br /> I wont loose any data if i delete one of the branches in the list
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            git branch -m old_branch_name new_branch_name
+        </td>
+        <td>
+            rename branch name
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            git merge --no--ff branch_name
+        </td>
+        <td>
+            marge branch with a new commit even thought fast forward merge is available. we should do this if we want
+            to <br /> keep track of our merges
+        </td>
+    </tr>
+    <tr>
+        <td>
+            git log branch_name --oneline -3
+        </td>
+        <td>
+            print log of specific branch max 3 (-3 optional)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            git merge --abort
+        </td>
+        <td>
+            abort merging
+        </td>
+    </tr>
+    <tr>
+        <td>
+            git commit
+        </td>
+        <td>
+            only use after fixing merge conflicts ( no commit message needed here )
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
