@@ -6,82 +6,85 @@
 </head>
 <body>
 <div>
-    <?xml version="1.0" encoding="UTF-8"?>
-    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-        <modelVersion>4.0.0</modelVersion>
 
-        <groupId>com.lynas</groupId>
-        <artifactId>mvnp1</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <packaging>war</packaging>
-
-        <name>mvnp1</name>
-
-        <properties>
-            <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
-            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        </properties>
-
-        <dependencies>
-            <dependency>
-                <groupId>javax</groupId>
-                <artifactId>javaee-web-api</artifactId>
-                <version>7.0</version>
-                <scope>provided</scope>
-            </dependency>
-        </dependencies>
-
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
-                    <configuration>
-                        <source>1.7</source>
-                        <target>1.7</target>
-                        <compilerArguments>
-                            <endorseddirs>${endorsed.dir}</endorseddirs>
-                        </compilerArguments>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>2.3</version>
-                    <configuration>
-                        <failOnMissingWebXml>false</failOnMissingWebXml>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <version>2.6</version>
-                    <executions>
-                        <execution>
-                            <phase>validate</phase>
-                            <goals>
-                                <goal>copy</goal>
-                            </goals>
-                            <configuration>
-                                <outputDirectory>${endorsed.dir}</outputDirectory>
-                                <silent>true</silent>
-                                <artifactItems>
-                                    <artifactItem>
-                                        <groupId>javax</groupId>
-                                        <artifactId>javaee-endorsed-api</artifactId>
-                                        <version>7.0</version>
-                                        <type>jar</type>
-                                    </artifactItem>
-                                </artifactItems>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </build>
-
-    </project>
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />
+    &lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;<br />
+    &nbsp; &nbsp; &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;<br />
+    <br />
+    &nbsp; &nbsp; &lt;groupId&gt;com.lynas&lt;/groupId&gt;<br />
+    &nbsp; &nbsp; &lt;artifactId&gt;mvnp1&lt;/artifactId&gt;<br />
+    &nbsp; &nbsp; &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;<br />
+    &nbsp; &nbsp; &lt;packaging&gt;war&lt;/packaging&gt;<br />
+    <br />
+    &nbsp; &nbsp; &lt;name&gt;mvnp1&lt;/name&gt;<br />
+    <br />
+    &nbsp; &nbsp; &lt;properties&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &lt;endorsed.dir&gt;${project.build.directory}/endorsed&lt;/endorsed.dir&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;<br />
+    &nbsp; &nbsp; &lt;/properties&gt;<br />
+    &nbsp; <br />
+    &nbsp; &nbsp; &lt;dependencies&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &lt;dependency&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;groupId&gt;javax&lt;/groupId&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;artifactId&gt;javaee-web-api&lt;/artifactId&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;version&gt;7.0&lt;/version&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;scope&gt;provided&lt;/scope&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dependency&gt;<br />
+    &nbsp; &nbsp; &lt;/dependencies&gt;<br />
+    <br />
+    &nbsp; &nbsp; &lt;build&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &lt;plugins&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;plugin&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;version&gt;3.1&lt;/version&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;configuration&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;source&gt;1.7&lt;/source&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;target&gt;1.7&lt;/target&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;compilerArguments&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;endorseddirs&gt;${endorsed.dir}&lt;/endorseddirs&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/compilerArguments&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/configuration&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/plugin&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;plugin&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;version&gt;2.3&lt;/version&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;configuration&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;failOnMissingWebXml&gt;false&lt;/failOnMissingWebXml&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/configuration&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/plugin&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;plugin&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;version&gt;2.6&lt;/version&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;executions&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;execution&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;phase&gt;validate&lt;/phase&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;goals&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;goal&gt;copy&lt;/goal&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/goals&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;configuration&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;outputDirectory&gt;${endorsed.dir}&lt;/outputDirectory&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;silent&gt;true&lt;/silent&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;artifactItems&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;artifactItem&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;groupId&gt;javax&lt;/groupId&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;artifactId&gt;javaee-endorsed-api&lt;/artifactId&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;version&gt;7.0&lt;/version&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;type&gt;jar&lt;/type&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/artifactItem&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/artifactItems&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/configuration&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/execution&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/executions&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/plugin&gt;<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &lt;/plugins&gt;<br />
+    &nbsp; &nbsp; &lt;/build&gt;<br />
+    <br />
+    &lt;/project&gt;<br />
+    <div>
+        <br /></div>
 
 </div>
 </body>
