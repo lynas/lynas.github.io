@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://realdjango.herokuapp.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta charset="utf-8">
+     <title>Setting up a Django Project for the Non-Programmer</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="Setting up a Django Project for the Non-Programmer">
+     <meta name="author" content="Michael Herman">
+
+     <!-- Le styles -->
+     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+      <style>
+
+          .jumbotron {
+            margin: 40px 0;
+            text-align: center;
+          }
+          .jumbotron h1 {
+            font-size: 60px;
+            line-height: 1;
+          }
+          .jumbotron .lead {
+            font-size: 23px;
+            line-height: 1.25;
+          }
+          .jumbotron .twitter_account {
+            font-size: 18px;
+            line-height: 1.25;
+          }
+          .jumbotron .btn {
+            font-size: 21px;
+            padding: 14px 24px;
+          }
+       
+     </style>
+
+     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+     <!--[if lt IE 9]>
+       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+     <script id="twitter-wjs" src="./Setting up a Django Project for the Non-Programmer_files/widgets.js"></script><script src="./Setting up a Django Project for the Non-Programmer_files/jquery-1.10.1.min.js" type="text/javascript"></script><link href="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.css" rel="stylesheet" type="text/css"><style type="text/css"></style><script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mutationObserver.js"></script><script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.js"></script><mytubeelement id="myTubeRelayElementToPage" event="preferencesUpdated" data="{&quot;bundle&quot;:{&quot;label_delimitor&quot;:&quot;:&quot;,&quot;percentage&quot;:&quot;%&quot;,&quot;smart_buffer&quot;:&quot;Smart Buffer&quot;,&quot;start_playing_when_buffered&quot;:&quot;Start playing when buffered&quot;,&quot;sound&quot;:&quot;Sound&quot;,&quot;desktop_notification&quot;:&quot;Desktop Notification&quot;,&quot;continuation_on_next_line&quot;:&quot;-&quot;,&quot;loop&quot;:&quot;Loop&quot;,&quot;only_notify&quot;:&quot;Only Notify&quot;,&quot;estimated_time&quot;:&quot;Estimated Time&quot;,&quot;global_preferences&quot;:&quot;Global Preferences&quot;,&quot;no_notification_supported_on_your_browser&quot;:&quot;No notification style supported on your browser version&quot;,&quot;video_buffered&quot;:&quot;Video Buffered&quot;,&quot;buffered&quot;:&quot;Buffered&quot;,&quot;hyphen&quot;:&quot;-&quot;,&quot;buffered_message&quot;:&quot;The video has been buffered as requested and is ready to play.&quot;,&quot;not_supported&quot;:&quot;Not Supported&quot;,&quot;on&quot;:&quot;On&quot;,&quot;off&quot;:&quot;Off&quot;,&quot;click_to_enable_for_this_site&quot;:&quot;Click to enable for this site&quot;,&quot;desktop_notification_denied&quot;:&quot;You have denied permission for desktop notification for this site&quot;,&quot;notification_status_delimitor&quot;:&quot;;&quot;,&quot;error&quot;:&quot;Error&quot;,&quot;adblock_interferance_message&quot;:&quot;Adblock (or similar extension) is known to interfere with SmartVideo. Please add this url to adblock whitelist.&quot;,&quot;calculating&quot;:&quot;Calculating&quot;,&quot;waiting&quot;:&quot;Waiting&quot;,&quot;will_start_buffering_when_initialized&quot;:&quot;Will start buffering when initialized&quot;,&quot;will_start_playing_when_initialized&quot;:&quot;Will start playing when initialized&quot;,&quot;completed&quot;:&quot;Completed&quot;,&quot;buffering_stalled&quot;:&quot;Buffering is stalled. Will stop.&quot;,&quot;stopped&quot;:&quot;Stopped&quot;,&quot;hr&quot;:&quot;Hr&quot;,&quot;min&quot;:&quot;Min&quot;,&quot;sec&quot;:&quot;Sec&quot;,&quot;any_moment&quot;:&quot;Any Moment&quot;,&quot;popup_donate_to&quot;:&quot;Donate to&quot;,&quot;extension_id&quot;:&quot;lnkdbjbjpnpjeciipoaflmpcddinpjjp&quot;},&quot;prefs&quot;:{&quot;desktopNotification&quot;:true,&quot;soundNotification&quot;:true,&quot;logLevel&quot;:0,&quot;enable&quot;:true,&quot;loop&quot;:false,&quot;hidePopup&quot;:false,&quot;autoPlay&quot;:false,&quot;autoBuffer&quot;:false,&quot;autoPlayOnBuffer&quot;:false,&quot;autoPlayOnBufferPercentage&quot;:42,&quot;autoPlayOnSmartBuffer&quot;:true,&quot;quality&quot;:&quot;default&quot;,&quot;fshd&quot;:false,&quot;onlyNotification&quot;:false,&quot;enableFullScreen&quot;:true,&quot;saveBandwidth&quot;:false,&quot;hideAnnotations&quot;:false,&quot;turnOffPagedBuffering&quot;:false}}"></mytubeelement><mytubeelement id="myTubeRelayElementToTab" event="relayPrefs" data="{&quot;loadBundle&quot;:true}"></mytubeelement>
+     
+     
+     <script type="text/javascript">
+     $(function(){
+     
+     
+     });
+     </script>
+   <script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+   <body data-twttr-rendered="true" style="">
+
+  
+     <div class="container">
+      <div class="masthead">
+        <h3 class="muted"><a href="http://www.realpython.com/">Real Python!</a></h3>
+      </div>
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="background-color:white;">
+        <h1>Setting up a Django Project <br>for Beginning Django Developers</h1>
+        <p class="lead">Or, as a gentle reminder for intermediate to advanced developers.</p>
+        
+        <iframe id="twitter-widget-2" scrolling="no" frameborder="0" allowtransparency="true" src="./Setting up a Django Project for the Non-Programmer_files/follow_button.f6414cc724dad41fd3c4f40fe19888fd.en.html" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 170px; height: 28px;" mytubeid="mytube1"></iframe>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        </script>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" src="./Setting up a Django Project for the Non-Programmer_files/tweet_button.3a4bde0b5804628844cfe7c865ab1925.en(1).html" class="twitter-mention-button twitter-tweet-button twitter-mention-button twitter-count-none" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 182px; height: 28px;" mytubeid="mytube2"></iframe>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        </script>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Setting up a Django Project for the Non-Programmer_files/tweet_button.3a4bde0b5804628844cfe7c865ab1925.en.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 138px; height: 28px;" mytubeid="mytube3"></iframe>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        </script>
+      </div>
+      <hr>
+      
+
+     
+
+<p><strong>This tutorial answers the question, <em>"How do I setup a Django project from scratch?"</em>. Since you're reading this, I assume (I hope, at least) you know that Django is a Python web framework built for rapid web development. We'll go through the setup process on both Windows and Unix environments, detailing the basic installation procedures of Django v1.5 and the dependencies required as well as a few additional libraries/extensions to get you started developing ASAP.</strong></p>
+
+<p>We'll also look at a basic workflow you can use as soon as your project structure is setup.</p>
+
+<p>Finally, you'll set up up your first project!</p>
+
+<p><em>Check out the accompanying videos:</em></p>
+
+<ul>
+<li><a href="http://youtu.be/D0MoGRZRtcA">Setting up a Django Project - part 1 (setup)</a></li>
+<li><a href="http://youtu.be/EuOJRop5aBE">Setting up a Django Project - part 2 (creating an app)</a></li>
+</ul>
+
+<h2>Requirements</h2>
+
+<p>You should have some Python experience and know basic terminal (Unix) or PowerShell commands (Windows). If you've never used the command line before, please familiarize yourself with the following commands:</p>
+
+<p><img src="./Setting up a Django Project for the Non-Programmer_files/00000175.png" alt="image"></p>
+
+<p>For simplicity, all examples use the Unix-style prompt:</p>
+
+<pre><code>$ python manage.py runserver
+</code></pre>
+
+<p>(The dollar sign is not part of the command.)</p>
+
+<p>Windows equivalent:</p>
+
+<pre><code>C:\&gt; python manage.py runserver
+</code></pre>
+
+<p>Also, in a Unix environment, you may need to add <code>sudo</code> to each command:</p>
+
+<pre><code>$ sudo python manage.py runserver
+</code></pre>
+
+<p>Sudo simply allows regular users to run commands with admin privileges, which modifies the system for all users. You will need to use your admin password.</p>
+
+<h2>What you need for a basic dev environment:</h2>
+
+<ol>
+<li>Python 2.7.x</li>
+<li>easy_install and pip</li>
+<li>Git 1.7/1.8</li>
+<li>virtualenv</li>
+<li>Django</li>
+<li>Database (SQLite, MySQL, PostgreSQL)</li>
+<li>South</li>
+<li>Text editor (Sublime, vim, Komodo, gedit)</li>
+</ol>
+
+<h3>Python</h3>
+
+<p><strong>Unix</strong></p>
+
+<p>Unix environments come pre-installed with Python. To check check your Python version, run the command:</p>
+
+<pre><code>$ python -V
+</code></pre>
+
+<p>If you already have a 2.7.x version, move on to the next step. If not, <a href="http://python.org/download/">download</a> and install the latest 2.7.x version</p>
+
+<p><strong>Windows</strong></p>
+
+<p>Unfortunately, if you're using Windows, you will have to install Python from scratch. Start by downloading Python 2.7.5 from the official Python <a href="http://www.python.org/getit/">website</a>. The Windows version is distributed as a MSI package. Once downloaded, double-click the file to install. By default this will install Python to C:\Python2.7.</p>
+
+<p>You also need to add Python to your PATH environmental variables, so when you want to run a Python script, you do not have to type the full path each and every time, as this is quite tedious. Since you downloaded Python version 2.7.5, you need to add the add the following directories to your PATH:</p>
+
+<pre><code>C:\Python27\
+C:\Python27\Scripts\
+C:\PYTHON27\DLLs\
+C:\PYTHON27\LIB\
+</code></pre>
+
+<p>Open your PowerShell and run the following command:</p>
+
+<pre><code>[Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Python27\;C:\Python27\Scripts\;C:\PYTHON27\DLLs\;C:\PYTHON27\LIB\;", "User")
+</code></pre>
+
+<p>To test to make sure Python was installed correctly open your command prompt and then type python to load the Shell. You should see something like:</p>
+
+<pre><code>Python 2.7.5 (v2.7.5:026ee0057e2d, Jun  6 2013, 11:43:10) 
+[MSC v.1500 32 bit (Intel)] on win32
+Type “help”, “copyright”, “credits” or “license” for more information.
+&gt;&gt;&gt;
+</code></pre>
+
+<p>If you get a command not found error, then there's probably something wrong with your PATH/environmental variables.Please watch the video <a href="http://youtu.be/ZvugV4Jd_sc">here</a> for assistance. Thanks!</p>
+
+<p>Press CRTL-D to exit the Shell. </p>
+
+<h3>easy_install and pip</h3>
+
+<p>Both easy_install and pip are Python Package Managers, which make it <em>much</em> easier to install and upgrade Python packages (and package dependencies).</p>
+
+<p>To download easy_install, go to the <a href="https://pypi.python.org/pypi/setuptools">Python Package Index</a> (PyPI). You need to download setuptools, which includes easy_install. Download the executable (.exe) file for Windows, or the package egg (.egg) for Unix. You can install it directly from the file.</p>
+
+<p>Pip, meanwhile, is a wrapper that relies on easy_install, so you must have easy_install setup and working first before you can install pip. Once easy_install is setup, run the following command to install pip:</p>
+
+<pre><code>$ easy_install pip
+</code></pre>
+
+<p>You can follow along on this video <a href="http://youtu.be/MIHYflJwyLk">here</a> for assistance</p>
+
+<h3>Git</h3>
+
+<p>For <a href="http://git-scm.com/book/en/Getting-Started-About-Version-Control">version control</a>, we'll be using git. You can check your current version, if you have git already installed, with the following command:</p>
+
+<pre><code>$ git --version
+</code></pre>
+
+<p>If you do not have either 1.7.x or 1.8.x installed, <a href="http://git-scm.com/download">download</a> the latest version.</p>
+
+<h3>MySQL</h3>
+
+<p>SQLite comes pre-installed with Python, so let's look at how to set up MySQL.</p>
+
+<p>First, install MySQL from <a href="http://dev.mysql.com/doc/refman/5.7/en/installing.html">here</a>.</p>
+
+<p>Next, start the server, and then setup a new database and a user:</p>
+
+<pre><code>$ mysql.server start 
+$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+mysql&gt;
+mysql&gt; CREATE DATABASE django_db;
+Query OK, 1 row affected (0.01 sec)
+mysql&gt;
+mysql&gt; quit
+Bye
+</code></pre>
+
+<h3>virtualenv</h3>
+
+<p>It's common practice to use a <a href="http://www.virtualenv.org/en/latest/">virtualenv</a> (virtual environment) for your Python projects, which is used to create self-contained development environments (also called "sandboxes"). </p>
+
+<p>Think of virtualenv as a completely isolated container within your computer, where you can install any version of Python and/or libraries and it won't affect anything outside that container. It's like an isolated, soundproof room within your home where you can scream as loud as you want, about anything you want, and nobody else outside that room can hear it.</p>
+
+<blockquote>
+  <p>I use virtualenv to experiment with other versions of Python. I do not want to upgrade my main version of Python, so I have isolated "containers" with versions of Python in them to experiment with.</p>
+</blockquote>
+
+<p>Install virtualenv with the following command:</p>
+
+<pre><code>$ pip install virtualenv
+</code></pre>
+
+<p>Set up your development structure:</p>
+
+<pre><code>$ mkdir new_project
+$ cd new_project
+$ virtualenv --no-site-packages env
+</code></pre>
+
+<p>Activate virtualenv:</p>
+
+<p>Unix:</p>
+
+<pre><code>$ source env/bin/activate
+</code></pre>
+
+<p>Windows:</p>
+
+<pre><code>$ env\scripts\activate
+</code></pre>
+
+<p>You should see (env) before your prompt, <code>(env)$</code>, indicating that you're running within the 'env' virtualenv. </p>
+
+<p>To exit the virtualenv, type the following command:</p>
+
+<pre><code>$ deactivate
+</code></pre>
+
+<p>Then reactivate when you're ready to work again.</p>
+
+<p>Again, if you need help, please watch this <a href="http://youtu.be/GBAJ7VKyEpI">video</a></p>
+
+<h3>Django</h3>
+
+<p>Finally. Let's get Django installed:</p>
+
+<pre><code>$ pip install django==1.5.4
+</code></pre>
+
+<p>You can check the version by running the following commands:</p>
+
+<pre><code>$ python
+&gt;&gt;&gt; import django
+&gt;&gt;&gt; django.get_version()
+'1.5.4'
+&gt;&gt;&gt;
+</code></pre>
+
+<h2>Project setup</h2>
+
+<p>Before setting up your project make sure you have virtualenv activated.</p>
+
+<h3>Setup Django project</h3>
+
+<pre><code>$ django-admin.py startproject mysite
+</code></pre>
+
+<p>This creates a new directory called "mysite" with the basic Django directory and structures:</p>
+
+<pre><code>├── manage.py
+└── mysite
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+</code></pre>
+
+<h3>Version control</h3>
+
+<p>Before you start any developing, put your project under version control. First, add a new file called <em>.gitignore</em>, which is used to ignore unnecessary files from being added to the git repository. Add the following to the file:</p>
+
+<pre><code>.Python
+env
+bin
+lib
+include
+.DS_Store
+.pyc
+</code></pre>
+
+<blockquote>
+  <p>Save this file under your "new_project" directory.</p>
+</blockquote>
+
+<p>Now initialize and add your files to the initial commit. If you use GitHub or BitBucket, PUSH your files to your central repo.</p>
+
+<pre><code>$ git init
+$ git add .
+$ git commit -m "initial commit"
+</code></pre>
+
+<h3>Database settings</h3>
+
+<p>First, install MySQL-python, which is a database connector for Python:</p>
+
+<pre><code>$ pip install MySQL-python
+</code></pre>
+
+<p>Edit your <em>settings.py</em> file within your <em>mysite</em> directory to add the following information about your database you setup earlier:</p>
+
+<pre><code>DATABASES = {
+    'default': { 
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'django_db',                     
+        'USER': 'root',
+        'PASSWORD': 'your_password',
+    }
+}
+</code></pre>
+
+<p>Create your database tables and set up a superuser:</p>
+
+<pre><code>$ cd mysite
+$ python manage.py syncdb
+Creating table auth_message
+Creating table auth_group
+Creating table auth_user
+Creating table auth_permission
+Creating table django_content_type
+Creating table django_session
+Creating table django_site
+
+You just installed Django's auth system, which means you don't have any superusers defined.
+Would you like to create one now? (yes/no): yes
+Username: admin
+E-mail address: your@email.com
+Password: 
+Password (again): 
+Superuser created successfully.
+Installing index for auth.Message model
+Installing index for auth.Permission model
+Loading 'initial_data' fixtures...
+No fixtures found.
+</code></pre>
+
+<p>Launch the development server:</p>
+
+<pre><code>$ python manage.py runserver
+</code></pre>
+
+<p>You should see the following output if Django and the database are setup correctly:</p>
+
+<pre><code>Validating models...
+
+0 errors found
+June 18, 2013 - 23:36:02
+Django version 1.5, using settings 'mysite.settings'
+Development server is running at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+</code></pre>
+
+<p>Point your browser at <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000</a> and you should see the Django "It worked!" page.</p>
+
+<h3>South</h3>
+
+<p><a href="http://south.readthedocs.org/en/latest/about.html">South</a> is used for managing changes to your database tables. As your application grows, and you need to add a field to a specific table, for example, you can simply make changes to the database via data migrations with South. It makes life so much easier.</p>
+
+<p>Install South and then commit your new changes to git.</p>
+
+<pre><code>$ pip install south
+</code></pre>
+
+<h3>pip freeze</h3>
+
+<p>Now that all your libraries are installed, use the following command to create a record of the installed libraries:</p>
+
+<pre><code>$ pip freeze &gt; requirements.txt
+</code></pre>
+
+<p>This <a href="http://www.pip-installer.org/en/latest/usage.html#pip-freeze">command</a> is incredibly useful if you need to recreate your project from scratch and need to know the exact libraries and subsequent versions you need to install. </p>
+
+<h3>Set up your Django app</h3>
+
+<p>Create your new app:</p>
+
+<pre><code>$ python manage.py startapp myapp
+</code></pre>
+
+<p>Your project structure should now look like this:</p>
+
+<pre><code>├── manage.py
+├── myapp
+│&nbsp;&nbsp; ├── __init__.py
+│&nbsp;&nbsp; ├── models.py
+│&nbsp;&nbsp; ├── tests.py
+│&nbsp;&nbsp; └── views.py
+└── mysite
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+</code></pre>
+
+<p>Update the INSTALLED_APPS in your <em>settings.py</em> file:</p>
+
+<pre><code>INSTALLED_APPS = (
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'myapp',
+    'south',
+)
+</code></pre>
+
+<blockquote>
+  <p>We enabled the admin, <code>'django.contrib.admin'</code>, and added your app, <code>'myapp'</code>, and <code>'south'</code>.</p>
+</blockquote>
+
+<p>Open <em>urls.py</em> and uncomment these three lines:</p>
+
+<pre><code>from django.contrib import admin
+admin.autodiscover()
+url(r'^admin/', include(admin.site.urls)),
+</code></pre>
+
+<p>Sync your database again:</p>
+
+<pre><code>$ python manage.py syncdb
+</code></pre>
+
+<p>Create a database migration file with South:</p>
+
+<pre><code>$ python manage.py schemamigration myapp --initial
+</code></pre>
+
+<p>Migrate the database changes:</p>
+
+<pre><code>$ python manage.py migrate myapp
+</code></pre>
+
+<p>Fire up the server (<code>python manage.py runserver</code>), and then navigate to <a href="http://127.0.0.1:8000/admin">http://127.0.0.1:8000/admin</a>. Enter your superuser's username and password to login to the admin page.</p>
+
+<p>Commit to git:</p>
+
+<pre><code>$ git add .
+$ git commit -m "updated settings, created app, added south, enabled django admin"
+</code></pre>
+
+<h2>Using git, the right way</h2>
+
+<blockquote>
+  <p>This section is fairly advanced and completely optional. If this is your first time setting up Django, you can skip this section.</p>
+</blockquote>
+
+<p>If you are not using GitHub or Bitbucket as a central repo, you should create a separate branch of your local repo for development.</p>
+
+<p>First, create a new directory called "dev" within your "new_project" directory, navigate into the newly created directory, and then clone (copy) your entire Django project:</p>
+
+<pre><code>$ git clone /path/to/your/project/
+</code></pre>
+
+<blockquote>
+  <p>For example: <code>/Users/michaelherman/desktop/new_project</code></p>
+</blockquote>
+
+<p>This command creates an exact copy of your repo, which includes all your commits and branches. Always develop from this directory by creating separate branches for each major change to your project:</p>
+
+<pre><code>$ git branch &lt;branchname&gt;
+</code></pre>
+
+<p>Next switch to that branch:</p>
+
+<pre><code>$ git checkout &lt;branchname&gt;
+</code></pre>
+
+<p>You can always check to see what branches are available with this command:</p>
+
+<pre><code>$ git branch
+</code></pre>
+
+<p>Once you are ready to commit, after you are done developing, use the following commands:</p>
+
+<pre><code>$ git add .
+$ git commit -a
+</code></pre>
+
+<p>Now you want to merge your changes with the master branch:</p>
+
+<pre><code>$ git checkout master
+$ git merge &lt;branchname&gt;
+</code></pre>
+
+<p>You can PUSH your changes to GitHub or Bitbucket if you use either service:</p>
+
+<pre><code>$ git push
+</code></pre>
+
+<p>Finally, navigate back to your main production folder and PULL the changes:</p>
+
+<pre><code>$ git pull
+</code></pre>
+
+<p><strong>Example:</strong></p>
+
+<pre><code>(env)$ cd dev
+(env)$ cd new_project
+(env)$ git branch 06212013
+(env)$ git checkout 06212013
+(env)$ git add .
+(env)$ git commit -m "description of changes made"
+(env)$ git checkout master
+(env)$ git merge 06212013
+(env)$ git pull /Users/michaelherman/desktop/new_project/dev/new_project
+</code></pre>
+
+<h2>Workflow</h2>
+
+<p>Now that your app is set up, follow either of these simple workflows every time you want to make changes to your app:</p>
+
+<h3>Basic</h3>
+
+<ol>
+<li>Navigate to your project</li>
+<li>Activate virtualenv</li>
+<li>Develop</li>
+<li>Commit changes</li>
+<li>Deploy</li>
+<li>Deactivate virtualenv</li>
+</ol>
+
+<h3>Advanced</h3>
+
+<ol>
+<li>Navigate to your project</li>
+<li>Activate virtualenv</li>
+<li>Create and checkout a new git branch</li>
+<li>Develop</li>
+<li>Commit changes</li>
+<li>Merge the new branch with your master branch</li>
+<li>PULL the changes into the production folder</li>
+<li>Deploy</li>
+<li>Deactivate virtualenv</li>
+</ol>
+
+<p>Cheers! Any questions? Suggestions? </p>
+
+<p>Let's create a basic app!</p>
+
+<h2>Create an App</h2>
+
+<p>Let's create a basic, single page app that uses <a href="http://daringfireball.net/projects/markdown/">markdown</a> to display text.</p>
+
+<h3>Setup</h3>
+
+<ol>
+<li><p>With virtualenv activated, install the following package to render markdown.</p>
+
+<pre><code>$ pip install django-markdown-deux
+</code></pre></li>
+<li><p>Update the requirements file to include the new dependency:</p>
+
+<pre><code>$ pip freeze &gt; requirements.txt
+</code></pre></li>
+<li><p>Add "markdown_deux" to <em>settings.py</em>:</p>
+
+<pre><code>INSTALLED_APPS = (
+  'django.contrib.auth',
+  'django.contrib.contenttypes',
+  'django.contrib.sessions',
+  'django.contrib.sites',
+  'django.contrib.messages',
+  'django.contrib.staticfiles',
+  'django.contrib.admin',
+  'myapp',
+  'south',
+  'markdown_deux',
+)
+</code></pre></li>
+<li><p>Create a new directory within the "mysite" directory called "templates", and then add the relative path to the settings.py file:</p>
+
+<pre><code>TEMPLATE_DIRS = (
+'/Users/michaelherman/desktop/new_project/mysite/templates'
+)
+</code></pre>
+
+<p>Your project structure should look like this:</p>
+
+<pre><code>├── manage.py
+├── myapp
+│&nbsp;&nbsp; ├── __init__.py
+│&nbsp;&nbsp; ├── __init__.pyc
+│&nbsp;&nbsp; ├── migrations
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 0001_initial.py
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── __init__.py
+│&nbsp;&nbsp; ├── models.py
+│&nbsp;&nbsp; ├── tests.py
+│&nbsp;&nbsp; └── views.py
+├── mysite
+│&nbsp;&nbsp; ├── __init__.py
+│&nbsp;&nbsp; ├── settings.py
+│&nbsp;&nbsp; ├── urls.py
+│&nbsp;&nbsp; ├── wsgi.py
+└── templates
+</code></pre></li>
+</ol>
+
+<h2>Views and URLs</h2>
+
+<p>We will be following the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-View-Controller</a> (MVC) architecture structure. Django projects are logically organized around this architecture. However, Django's <a href="https://docs.djangoproject.com/en/1.5/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names">architecture</a> is slightly different in that the views act as the controllers. So, projects are actually organized in a Model-Template-Views architecture (MTV). Yes, this is confusing. </p>
+
+<h3>Views</h3>
+
+<p>Add the following code to the <em>views.py</em> file:</p>
+
+<pre><code>from django.shortcuts import render_to_response
+from django.template import RequestContext
+
+def index(request):
+    return render_to_response('index.html')
+</code></pre>
+
+<p>This function takes a parameter, request, which is an object that has information about the user requesting the page from the browser. The function's response is to simply render the <em>index.html</em> template.</p>
+
+<h3>URLs</h3>
+
+<p>Next, we need to add a new pattern to the <em>urls.py</em> file:</p>
+
+<pre><code>urlpatterns = patterns('',
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'myapp.views.index')
+)
+</code></pre>
+
+<p>For more information on how to generate url patters, please <a href="https://docs.djangoproject.com/en/1.5/topics/http/urls/">view</a> the official Django documentation.</p>
+
+<h3>Templates</h3>
+
+<p>Finally, we need to create the "index.html" template. Create a new file called <em>index.html</em> within the templates directory, and add the code found <a href="https://gist.github.com/mjhea0/162db4d8a8ffa853c7f3">here</a>.</p>
+
+<p>Fire up the server. How does that look? Let's add some styles.</p>
+
+<p>Replace the previous code with code <a href="https://gist.github.com/mjhea0/515594fb5de9df07a7e9">here</a>.</p>
+
+<p>Better? </p>
+
+<h2>Conclusion</h2>
+
+<p>Finish up adding styles and content as you see fit. Then return to the workflow in the first section to finish the development process. If you need help, please visit the Real Python <a href="http://www.realpython.com/forum">forums</a>. Purchase <a href="http://www.realpython.com/">Real Python</a> while you're there.</p>
+
+<p>Let's go over the official Django <a href="https://docs.djangoproject.com/en/1.5/intro/tutorial01/">Tutorial</a> (aka, the Polls tutorial) next time!</p>
+
+<p>Bye.</p>
+
+  
+      <br>
+      <br>
+      <hr>
+      <div class="footer">
+        <p>Copyright © 2013 <a href="http://www.realpython.com/">RealPython.com</a>. Developed by <a href="http://www.mherman.org/">Michael Herman</a>. Powered by Django, of course.</p><p></p>
+      </div>
+     </div> 
+
+   
+ 
+
+
+
+
+
+
+
+
+
+
+</body></html>
