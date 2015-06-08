@@ -1,0 +1,59 @@
+<html>
+<head>
+    <style>
+        .genbox{
+            border: 1px solid #00CCFF;
+            margin-bottom: 20px;
+        }
+        .ins{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="genbox">
+
+    <h1>Default stuff setup</h1>
+
+    <p>sudo apt-get install git</p>
+
+    <p>sudo apt-get install curl</p>
+
+    <p>sudo apt-get install vim</p>
+
+</div>
+
+<div class="genbox">
+    <h1>JDK install</h1>
+    <p>tar -xvf jdk-8-linux-x64.tar.gz (64-bit)</p>
+    <p>sudo mkdir -p /usr/lib/jvm</p>
+    <p>sudo mv ./jdk1.8.0 /usr/lib/jvm/</p>
+    <p>sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.8.0/bin/java" 1</p>
+    <p>sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.8.0/bin/javac" 1</p>
+    <p>sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk1.8.0/bin/javaws" 1</p>
+
+
+    <p>sudo chmod a+x /usr/bin/java</p>
+    <p>sudo chmod a+x /usr/bin/javac</p>
+    <p>sudo chmod a+x /usr/bin/javaws</p>
+    <p>sudo chown -R root:root /usr/lib/jvm/jdk1.8.0</p>
+
+    <p>sudo update-alternatives --config java</p>
+    <p>sudo update-alternatives --config javac</p>
+    <p>sudo update-alternatives --config javaws</p>
+</div>
+
+
+<div class="genbox">
+    <h1 class="ins">Install oh my zsh</h1>
+    <p>git clone https://github.com/powerline/fonts.git</p>
+    <p class="ins">cd to font folder</p>
+    <p>bash install.sh</p>
+    <p class="ins">in terminal change font to (Source code pro for powerline)</p>
+    <p>sudo apt-get install zsh</p>
+    <p>curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > install.sh</p>
+    <p>bash install.sh</p>
+
+</div>
+</body>
+</html>
