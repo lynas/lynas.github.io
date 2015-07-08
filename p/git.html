@@ -23,6 +23,34 @@
         </thead>
         <tbody>
         <tr>
+            <td>
+                git remote -v
+            </td>
+            <td>
+                check git remote
+            </td>
+        </tr>
+        <tr>
+            <td>
+                git remote add upstream git@github.com:user/repo_name
+            </td>
+            <td>
+                Add upstream for pull changed in original repo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                git fetch upstream
+            </td>
+            <td>
+                fetch new changes to local machine (this fetch new changed and saves it to upstream/master)
+                <br>
+                Now you can switch to that branch to check changes or merge changes by
+                <br />
+                git merge upstream/master
+            </td>
+        </tr>
+        <tr>
             <td>git init
             </td>
             <td>initialize git repository
