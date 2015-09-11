@@ -78,5 +78,21 @@
 		<br>(add it to to /etc/environment or .bashrc or .zshrc)
 	</p>
 </div>
+<div class="genbox">
+    <h1>How can I tell Ubuntu to do nothing when I close my laptop lid?</h1>
+    <p>
+        sudo vim /etc/systemd/logind.conf
+	</p>
+    <p>Add a line HandleLidSwitch=ignore (make sure it's not commented out!),</p>
+    <p>sudo restart systemd-logind</p>
+</div>
+<div class="genbox">
+    <h1>How to change icon</h1>
+    <p>create /home/<user>/.icons</p>
+    <p>keep icon folder here</p>
+    <p>open gnome-tweak-tool -> interface -> icon change</p>
+    <p>logout - login if necessary</p>
+</div>
+
 </body>
 </html>
