@@ -1,101 +1,141 @@
 <html>
 <head>
     <style>
-        .genbox{
+        .genbox {
             border: 1px solid #00CCFF;
             margin-bottom: 20px;
         }
-        .ins{
+
+        .ins {
             color: red;
         }
     </style>
 </head>
 <body>
 <div class="genbox">
-
     <h1>Default stuff setup</h1>
 
-    <p>sudo apt-get install git</p>
+<p>sudo apt-get install git curl vim tree compizconfig-settings-manager gnome-tweak-tool ubuntu-restricted-extras unity-tweak-tool recordmydesktop wine</p>
+<p>Disable Overlay Scrollbars: gsettings set com.canonical.desktop.interface scrollbar-mode normal</p>
 
-    <p>sudo apt-get install curl</p>
-
-    <p>sudo apt-get install vim</p>
-
+    <p>
+    <ul>
+        <li>disable online search from settings -> privacy</li>
+        <li>Copy vm</li>
+        <li>get ant jar files</li>
+        <li>get maven settings file</li>
+        <li>disable guest</li>
+    </ul>
+    </p>
 </div>
 <div class="genbox">
     <h1>Ubuntu tewak</h1>
+
     <p>sudo add-apt-repository ppa:tualatrix/ppa</p>
+
     <p>sudo apt-get update</p>
+
     <p>sudo apt-get install ubuntu-tweak</p>
 </div>
 <div class="genbox">
     <h1>JDK install</h1>
+
     <p>tar -xvf jdk-8-linux-x64.tar.gz (64-bit)</p>
+
     <p>sudo mkdir -p /usr/lib/jvm</p>
+
     <p>sudo mv ./jdk1.8.0 /usr/lib/jvm/</p>
+
     <p>sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.8.0/bin/java" 1</p>
+
     <p>sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.8.0/bin/javac" 1</p>
+
     <p>sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk1.8.0/bin/javaws" 1</p>
 
 
     <p>sudo chmod a+x /usr/bin/java</p>
+
     <p>sudo chmod a+x /usr/bin/javac</p>
+
     <p>sudo chmod a+x /usr/bin/javaws</p>
+
     <p>sudo chown -R root:root /usr/lib/jvm/jdk1.8.0</p>
 
     <p>sudo update-alternatives --config java</p>
+
     <p>sudo update-alternatives --config javac</p>
+
     <p>sudo update-alternatives --config javaws</p>
 </div>
 
 
 <div class="genbox">
     <h1 class="ins">Install oh my zsh</h1>
+
     <p>git clone https://github.com/powerline/fonts.git</p>
+
     <p class="ins">cd to font folder</p>
+
     <p>bash install.sh</p>
+
     <p class="ins">in terminal change font to (Source code pro for powerline)</p>
+
     <p>sudo apt-get install zsh</p>
+
     <p>curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > install.sh</p>
+
     <p>bash install.sh</p>
 
 </div>
 <div class="genbox">
     <h1>Skype setup</h1>
+
     <p>sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"</p>
+
     <p>sudo apt-get update</p>
+
     <p>sudo apt-get install skype && sudo apt-get -f install</p>
 </div>
 <div class="genbox">
     <h1>Any bash tool like maven,jdk,ant</h1>
+
     <p>
-		add following line to /etc/environment <br />
-      	JAVA_HOME="/usr/lib/jvm/jdk1.7.0_79"
-		<br /><br />
-		OR
-		<br /><br />
-		PATH=/home/sazzad/devTools/apache-ant-1.9.6/bin:$PATH
-		<br>(add it to to /etc/environment or .bashrc or .zshrc)
-	</p>
+        add following line to /etc/environment <br/>
+        JAVA_HOME="/usr/lib/jvm/jdk1.7.0_79"
+        <br/><br/>
+        OR
+        <br/><br/>
+        PATH=/home/sazzad/devTools/apache-ant-1.9.6/bin:$PATH
+        <br>(add it to to /etc/environment or .bashrc or .zshrc)
+    </p>
 </div>
 <div class="genbox">
     <h1>How can I tell Ubuntu to do nothing when I close my laptop lid?</h1>
+
     <p>
         sudo vim /etc/systemd/logind.conf
-	</p>
+    </p>
+
     <p>Add a line HandleLidSwitch=ignore (make sure it's not commented out!),</p>
+
     <p>sudo restart systemd-logind</p>
 </div>
 <div class="genbox">
     <h1>How to change icon</h1>
+
     <p>create /home/username/.icons</p>
+
     <p>keep icon folder here</p>
+
     <p>open gnome-tweak-tool -> interface -> icon change</p>
+
     <p>logout - login if necessary</p>
+
     <p><a href="http://www.makeuseof.com/tag/9-beautiful-alternatives-default-linux-icons/">ref</a></p>
 </div>
 <div class="genbox">
     <h1>Intellij ace-jump bug fix</h1>
+
     <p><a href="https://github.com/Centaur/AceJump">AceJump BugFIX</a></p>
 </div>
 
