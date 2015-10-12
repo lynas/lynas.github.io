@@ -4,6 +4,7 @@
         .genbox {
             border: 1px solid #00CCFF;
             margin-bottom: 20px;
+            padding-left: 15px;
         }
 
         .ins {
@@ -15,7 +16,7 @@
 <div class="genbox">
     <h1>Default stuff setup</h1>
 
-<p>sudo apt-get install git curl vim tree compizconfig-settings-manager gnome-tweak-tool ubuntu-restricted-extras unity-tweak-tool recordmydesktop wine</p>
+<p>sudo apt-get install exfat-utils exfat-fuse git curl vim tree compizconfig-settings-manager ubuntu-restricted-extras unity-tweak-tool recordmydesktop wine</p>
 <p>Disable Overlay Scrollbars: gsettings set com.canonical.desktop.interface scrollbar-mode normal</p>
 
     <p>
@@ -25,6 +26,8 @@
         <li>get ant jar files</li>
         <li>get maven settings file</li>
         <li>disable guest</li>
+        <li>(set fix scrolber) gsettings set com.canonical.desktop.interface scrollbar-mode normal</li>
+        <li>meld (file comparing tools)</li>
     </ul>
     </p>
 </div>
@@ -66,6 +69,13 @@
     <p>sudo update-alternatives --config javac</p>
 
     <p>sudo update-alternatives --config javaws</p>
+    <p>
+        <p>for firefox support</p>
+        <p>ln -s /usr/lib/jvm/jdk1.8.0/jre/lib/amd64/libnpjp2.so ~/.mozilla/plugins/</p>
+    </p>
+    <p>
+        <a href="http://askubuntu.com/questions/56104/how-can-i-install-sun-oracles-proprietary-java-jdk-6-7-8-or-jre">Details</a>
+    </p>
 </div>
 
 
