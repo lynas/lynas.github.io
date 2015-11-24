@@ -14,58 +14,58 @@
         <thead>
         <tr>
             <td>
-                <h1>command</h1>
+                <h1>Description</h1>
             </td>
             <td>
-                <h1>Description</h1>
+                <h1>command</h1>
             </td>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td>
-                service --status-all
+                All service status
             </td>
             <td>
-                All service status
+                service --status-all
             </td>
         </tr>
         <tr>
-            <td>
-                service mysql (start/stop/status)
-            </td>
             <td>
                 action on service
             </td>
+            <td>
+                service mysql (start/stop/status)
+            </td>
         </tr>
         <tr>
-            <td>
-                rsync --progress input/location output/location
-            </td>
             <td>
                 copy with progress
             </td>
+            <td>
+                rsync --progress input/location output/location
+            </td>
         </tr>
         <tr>
+            <td>Make a shortcut of something</td>
             <td>
                 Sudo ln -s source destination
             </td>
-            <td>Make a shortcut of something</td>
         </tr>
         <tr>
-            <td>https://www.youtube.com/watch?v=YHBj8hsyduI</td>
             <td>Things to do after fresh install ubuntu</td>
+            <td>https://www.youtube.com/watch?v=YHBj8hsyduI</td>
         </tr>
         <tr>
-            <td>pm uninstall com.lynas.androidtestapp</td>
             <td>uninstall app from android phone</td>
+            <td>pm uninstall com.lynas.androidtestapp</td>
         </tr>
 
         <tr>
+            <td>See info before install e.g. version</td>
             <td>aptitude search
                 package -F "%c %p %d %V"
             </td>
-            <td>See info before install e.g. version</td>
         </tr>
         <tr>
             <td>Find File</td>
@@ -124,13 +124,18 @@
         <tr>
             <td>Alias</td>
             <td>
-                alias ccc="tail -n 20 ~/.zshrc"
                 alias si15="nohup ./devTools/idea15/bin/idea.sh &"
-                alias suu="sudo bash ~/uu.sh"
-                alias sfd="find /home/sazzad -type d -name "
-                alias sff="find -name "
-                alias netlog="sudo nethogs eth0"
+                alias ccc="tail ~/.zshrc -n 20"
+                alias s_removeTempAndBuild="rm -r .tmp/ && rm -r ../build"
+                alias s_updateSystem="sudo bash ~/uu.sh"
+                alias s_findDirectory="find /home/sazzad -type d -name "
+                alias s_findFile="find -name "
+                alias s_netlog="sudo nethogs enp1s0"
                 alias ee="exit"
+                alias s_antCleanSnapshot="ant clean snapshot"
+                alias s_run_corporate="authbind --deep ant install configure run -Denvironment=dev-sazzad"
+                alias s_logCorporate="tail -f /var/log/campuscom/server.log"
+                alias s_cdToDsi="cd ~/projects/dsi/"
             </td>
         </tr>
         <tr>
@@ -149,18 +154,21 @@
             </td>
         </tr>
         <tr>
-            <td>adb pull /sdcard/Download/IMG_20140119_120535.JPG Documents</td>
             <td>
                 Copy file from andoid to pc
             </td>
+            <td>adb pull /sdcard/Download/IMG_20140119_120535.JPG Documents</td>
         </tr>
         <tr>
-            <td>adb push fileName /sdcard/Download/</td>
             <td>
                 Copy file from andoid to pc
             </td>
+            <td>adb push fileName /sdcard/Download/</td>
         </tr>
 		<tr>
+            <td>
+                tmux commands
+            </td>
             <td>
 				c -> create window<br />
 				p -> previous window<br />
@@ -173,9 +181,6 @@
 				tmux kill-session -t sessionName -> kill a session<br />
 				tmux  attach -t sessionName -> attach to a session<br />
 			</td>
-            <td>
-				tmux commands
-            </td>
         </tr>
 
         </tbody>
