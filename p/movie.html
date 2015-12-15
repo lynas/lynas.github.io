@@ -1,39 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Movie List</title>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="../js/controller.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 </head>
 <body>
 
 <div class="container">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <td>
-                <h1>Name</h1>
-            </td>
-            <td>
-                <h1>Comments</h1>
-            </td>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>
-                Now You See Me
-            </td>
-            <td>
-                5 *
-            </td>
-        </tr>
-
-
-        </tbody>
-    </table>
+    <input type="text" ng-model="name"/>{{name}}
+    <div ng-controller="DataController">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td>
+                    <h1>Name</h1>
+                </td>
+                <td>
+                    <h1>Rating(max 10)</h1>
+                </td>
+                <td>
+                    <h1>Year Released</h1>
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="movie in movies | orderBy:'name'">
+                <td>
+                    {{movie.name}}
+                </td>
+                <td>
+                    {{movie.myRating}}
+                </td>
+                <td>
+                    {{movie.year}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 </body>
