@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Git commands</title>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>
+                <h1>Description</h1>
+            </td>
+            <td>
+                <h1>Command</h1>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                Install docker <br/>(restart required must after first install)
+            </td>
+            <td>
+                wget -qO- https://get.docker.com/ | sh
+            </td>
+        </tr>
+        <tr>
+            <td>
+                run the hello image via docker
+            </td>
+            <td>
+                docker run hello-world
+            </td>
+        </tr>
+        <tr>
+            <td>
+                create ubuntu image and login to bash
+            </td>
+            <td>
+                docker run -it ubuntu:latest bash
+            </td>
+        </tr>
+        <tr>
+            <td>
+                run nginx on virtual port 80
+                <br />see real port via docker ps -a
+            </td>
+            <td>
+                docker run -d -p 80 nginx
+            </td>
+        </tr>
+        <tr>
+            <td>
+                create datastore for mysql
+            </td>
+            <td>
+                docker run -v /var/lib/mysql --name=my_datastore -d busybox echo 'my datastore'
+            </td>
+        </tr>
+        <tr>
+            <td>
+                remove a docker image by id
+            </td>
+            <td>
+                docker rm ContainerID
+            </td>
+        </tr>
+        <tr>
+            <td>
+                json info of a docker image
+            </td>
+            <td>
+                docker inspect my_datastore |less
+            </td>
+        </tr>
+        <tr>
+            <td>
+                crete image and connect it with the data store
+            </td>
+            <td>
+                docker run --name my_mysql -e MYSQL_ROOT_PASSWORD=sSsc3432gd --volumes-from my_datastore -d -p 3306 mysql
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
