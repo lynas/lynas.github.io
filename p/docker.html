@@ -87,6 +87,30 @@
                 docker run --name my_mysql -e MYSQL_ROOT_PASSWORD=sSsc3432gd --volumes-from my_datastore -d -p 3306 mysql
             </td>
         </tr>
+        <tr>
+            <td>
+                See info about all docker images
+            </td>
+            <td>
+                docker ps -a
+            </td>
+        </tr>
+        <tr>
+            <td>
+                docker remove image
+            </td>
+            <td>
+                docker rm ContainerID
+            </td>
+        </tr>
+        <tr>
+            <td>
+                docker run command outline
+            </td>
+            <td>
+                docker run [args for docker] image:tag [command for container] [arg for container]
+            </td>
+        </tr>
         </tbody>
     </table>
 </div>
