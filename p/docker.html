@@ -50,9 +50,12 @@
             <td>
                 run nginx on virtual port 80
                 <br />see real port via docker ps -a
+                <br /> this will run nginx in background
             </td>
             <td>
                 docker run -d -p 80 nginx
+                <br />
+                docker run -d -p 8800:80 nginx (specifying port)
             </td>
         </tr>
         <tr>
@@ -109,6 +112,62 @@
             </td>
             <td>
                 docker run [args for docker] image:tag [command for container] [arg for container]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                docker restart a container
+            </td>
+            <td>
+                docker restart containerID
+            </td>
+        </tr>
+        <tr>
+            <td>
+                docker attach to a container
+            </td>
+            <td>
+                docker attach containerID
+            </td>
+        </tr>
+        <tr>
+            <td>
+                docker kill container
+            </td>
+            <td>
+                docker kill containerID
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Docker run and copy folder from host to docker container
+            </td>
+            <td>
+                docker run -it --rm -v ~/fonts:/fonts ubuntu sh
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Docker set environment variable
+            </td>
+            <td>
+                docker run -it --rm -e VarName=VarValue ubuntu sh
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Docker run nginx with stuff from my current working directory
+            </td>
+            <td>
+                docker run -d -p 80 -v $(pwd):/usr/local/nginx/html nginx
+            </td>
+        </tr>
+        <tr>
+            <td>
+                compile and make binary of any programming language
+            </td>
+            <td>
+                docker run -it --rm -v $(pwd):/go -u 1000:1000 golang:latest go build -o HelloWorld.out
             </td>
         </tr>
         </tbody>
