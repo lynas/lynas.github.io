@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Anime List</title>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>
+                <h1>command</h1>
+            </td>
+            <td>
+                <h1>Description</h1>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                sudo apt-get install rhc<br />
+                sudo apt-get install ruby-full<br/>
+                sudo apt-get install rubygems<br />
+                sudo gem install rhc<br />
+                rhc setup
+            </td>
+            <td>
+                Install redhat command line tool
+            </td>
+        </tr>
+        <tr>
+            <td>
+                rhc app create app_name web_cartridge_name
+            </td>
+            <td>
+                Create new app
+            </td>
+        </tr>
+        <tr>
+            <td>
+                rhc tail app_name
+            </td>
+            <td>
+                see app log file
+            </td>
+        </tr>
+		<tr>
+            <td>
+            	rhc app stop - app_name
+			</td>
+            <td>
+				stop a app
+            </td>
+        </tr>
+		<tr>
+            <td>
+            	rhc ssh -a app_name	
+			</td>
+            <td>
+				ssh to app pc
+            </td>
+        </tr>
+        <tr>
+            <td>
+                cd $OPENSHIFT_DATA_DIR
+            </td>
+            <td>
+                cd to data directory
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
