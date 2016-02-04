@@ -74,6 +74,29 @@
                 cd to data directory
             </td>
         </tr>
+        <tr>
+            <td>
+                Run maven command with jdk 8 on non jdk based cartridge
+            </td>
+            <td>
+                export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0 <br />
+                export PATH=$JAVA_HOME/bin:$PATH<br />
+                download maven zip from maven site<br />
+                upzip it and go to that folder<br />
+                ./mavenfolder/bin/mvn -v<br />
+                you will see mvn points to jdk 8<br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                aws cli on openshift (python 3.3 cartridge)
+            </td>
+            <td>
+                pip install awscli<br />
+                rhc env-set AWS_ACCESS_KEY_ID={VALUE1} AWS_SECRET_ACCESS_KEY={VALUE2} AWS_DEFAULT_REGION={VALUE3}<br />
+                aws apigateway get-rest-apis (to see if it works)
+            </td>
+        </tr>
 
         </tbody>
     </table>
