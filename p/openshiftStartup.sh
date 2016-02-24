@@ -16,7 +16,6 @@ mkdir -p $OPENSHIFT_DATA_DIR/.m2
 export MAVEN_OPTS="-Dmaven.repo.local=$OPENSHIFT_DATA_DIR/.m2"
 
 
-
-
+#cd $OPENSHIFT_REPO_DIR
 #java -jar target/*.jar --server.port=${OPENSHIFT_DIY_PORT} --server.address=${OPENSHIFT_DIY_IP}
 
