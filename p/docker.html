@@ -178,6 +178,41 @@
                 docker run -it --rm -v $(pwd):/go -u 1000:1000 golang:latest go build -o HelloWorld.out
             </td>
         </tr>
+		<tr>
+            <td>
+                DockerFile
+            </td>
+            <td>
+                <br/>#[Using Docker ubuntu latest]
+				<br/>FROM ubuntu:latest
+				<br/>MAINTAINER szlynas@gmail.com
+				<br/>
+				<br/>RUN apt-get update
+				<br/>RUN apt-get install -y wget software-properties-common
+				<br/>
+				<br/>
+				<br/>
+				<br/>#[Setting up working directory]
+				<br/>WORKDIR /root
+				<br/>
+				<br/>
+				<br/>#[Setup JAVA]
+				<br/>RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.tar.gz
+				<br/>RUN tar -xvf jdk-8u65-linux-x64.tar.gz
+				<br/>RUN update-alternatives --install /usr/bin/java java /root/jdk1.8.0_65/bin/java 100
+				<br/>RUN update-alternatives --install /usr/bin/javac javac /root/jdk1.8.0_65/bin/javac 100
+				<br/>RUN update-alternatives --install /usr/bin/javaws javaws /root/jdk1.8.0_65/bin/javaws 100
+				<br/>RUN java -version
+				<br/>RUN rm jdk-8u65-linux-x64.tar.gz
+
+				<br/>#[Setup Maven]
+				<br/>RUN wget http://www.eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+				<br/>RUN tar -xvf apache-maven-3.3.9-bin.tar.gz
+				<br/>env PATH /root/apache-maven-3.3.9/bin:$PATH
+				<br/>RUN mvn -v
+				<br/>RUN rm apache-maven-3.3.9-bin.tar.gz
+			</td>
+        </tr>
         </tbody>
     </table>
 </div>
