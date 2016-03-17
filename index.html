@@ -1,216 +1,70 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="lynas">
-<head>
+<!doctype html>
+<html>
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sazzad Islam</title>
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <style>
-        .active{
-            border: 1px solid red;
-            border-radius: 10%;
-            background-color: red;
-        }
-    </style>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-59912268-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
-</head>
-<body>
-<div class="topLiner"></div>
-
-
-<!--/.nav-start -->
-
-<div role="navigation" class="navbar navbar-default topNav">
-    <div class="container">
-        <div class="navbar-header">
-            <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href ng-click="tab = 'main'" class="navbar-brand">
-                <h1>LynAs Sazzad</h1>
-                <span>Software Engineer</span>
-            </a>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,300">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="row top-buffer">
+      <div class="col-md-12 v-align animated bounceIn">
+        <div class="row bottom-buffer">
+          <p class="h1 text-center"><strong>Sazzad Islam</strong></p>
         </div>
-        <div class="navbar-collapse collapse navbar-right" ng-init="tab ='main'">
-            <ul class="nav navbar-nav" >
-                <li  ng-class="{active:tab ==='main'}"><a href ng-click="tab = 'main'">Home</a></li>
-                <li  ng-class="{active:tab ==='exp'}"><a href ng-click="tab = 'exp'">Experience</a></li>
-                <li  ng-class="{active:tab ==='proj'}"><a href ng-click="tab = 'proj'">Projects</a></li>
-                <li  ng-class="{active:tab ==='skl'}"><a href ng-click="tab = 'skl'">Skill</a></li>
-                <li  ng-class="{active:tab ==='con'}"><a href ng-click="tab = 'con'">Contact</a></li>
-            </ul>
-        </div>
-        <!--/.nav-collapse -->
-    </div>
-</div>
-<!--/.nav-end -->
-
-<div class="mid_contain">
-
-    <div class="panel" ng-show="tab === 'main'">
-        <temp-index></temp-index>
-    </div>
-    <div class="panel" ng-show="tab === 'exp'">
-        <temp-resume></temp-resume>
-    </div>
-    <div class="panel" ng-show="tab === 'proj'">
-        <temp-project></temp-project>
-    </div>
-    <div class="panel" ng-show="tab === 'skl'">
-        <temp-skill></temp-skill>
-    </div>
-    <div class="panel" ng-show="tab === 'con'">
-        <temp-about></temp-about>
-    </div>
-</div>
-
-
-<!--/footer-start -->
-
-<div class="footer">
-    <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <ul>
-                    <li>
-                        <img src="img/c.png" class="img-circle" alt="the-brains">
-                    </li>
-                    <li>
-                        <h4 class="footertext">Call</h4>
 
-                        <p class="footertext">T: +88 01716 881343</p>
-                    </li>
-                </ul>
+          <!-- Github -->
+          <div class="col-md-1 col-md-offset-4">
+            <div class="well well-sm animated bounceIn">
+              <div class="text-center">
+                <a href="https://github.com/lynas/">
+                  <span class="fa fa-github fa-3x"></span>
+                </a>
+              </div>
             </div>
-            <div class="col-md-3">
-                <ul>
-                    <li>
-                        <img src="img/m.png" class="img-circle" alt="the-brains" width="40" height="40">
-                    </li>
-                    <li>
-                        <h4 class="footertext">Contact</h4>
+          </div>
 
-                        <p class="footertext"><a href="mailto:szlynas@gmail.com">szlynas@gmail.com</a></p>
-                    </li>
-                </ul>
+          <!-- Linkedin -->
+          <div class="col-md-1">
+            <div class="well well-sm animated bounceIn">
+              <div class="text-center">
+                <a href="https://www.linkedin.com/in/md-sazzad-islam-099b253a">
+                  <span class="fa fa-linkedin-square fa-3x"></span>
+                </a>
+              </div>
             </div>
-            <div class="col-md-3">
-                <ul>
-                    <li>
-                        <img src="img/p.png" class="img-circle" alt="the-brains">
-                    </li>
-                    <li>
-                        <h4 class="footertext">Follow me</h4>
+          </div>
 
-                        <p class="footertext">
-                        <ul>
-                            <li><a href="https://www.facebook.com/sazzadislam"><img src="img/f.png"></a></li>
-                            <li><a href="https://twitter.com/szLynAs"><img src="img/tw.png"></a></li>
-                            <li><a href="https://plus.google.com/+LynAsSazzad"><img src="img/gp.png"></a></li>
-                        </ul>
-                        </p>
-                    </li>
-                </ul>
+          <!-- Website -->
+          <div class="col-md-1">
+            <div class="well well-sm animated bounceIn">
+              <div class="text-center">
+                <a href="#">
+                  <span class="fa fa-globe fa-3x"></span>
+                </a>
+              </div>
             </div>
-            <div class="col-md-3">
-                <ul>
-                    <li>
-                        <img src="img/c.png" class="img-circle" alt="the-brains">
-                    </li>
-                    <li>
-                        <p class="footertext">© 2014 by LynAs Sazzad.<br> Design idea<br> by Wix.com</p>
-                    </li>
-                </ul>
+          </div>
+
+          <!-- Email -->
+          <div class="col-md-1">
+            <div class="well well-sm animated bounceIn">
+              <div class="text-center">
+                <a href="mailto:szlynas@gmail.com">
+                  <span class="fa fa-envelope-square fa-3x"></span>
+                </a>
+              </div>
             </div>
+          </div>
+
         </div>
-
+      </div>
     </div>
-</div>
-
-<!--/footer-end -->
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-2.1.0.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
-<script>
-    var lynas = angular.module('lynas',[]);
-    lynas.directive('tempIndex',function(){
-        return {
-            restrict: 'E',
-            templateUrl: 'template/temp_index.html'
-        }
-
-    });
-    lynas.directive('tempResume',function(){
-        return {
-            restrict: 'E',
-            templateUrl: 'template/temp_resume.html'
-        }
-
-    });
-    lynas.directive('tempProject',function(){
-        return {
-            restrict: 'E',
-            templateUrl: 'template/temp_project.html'
-        }
-
-    });
-    lynas.directive('tempSkill',function(){
-        return {
-            restrict: 'E',
-            templateUrl: 'template/temp_skill.html'
-        }
-
-    });
-    lynas.directive('tempAbout',function(){
-        return {
-            restrict: 'E',
-            templateUrl: 'template/temp_about.html'
-        }
-
-    });
-</script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
