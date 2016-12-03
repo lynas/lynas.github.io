@@ -16,8 +16,9 @@
 <div class="genbox">
     <h1>Default stuff setup</h1>
 
-<p>sudo apt-get install exfat-utils exfat-fuse git curl vim tree compizconfig-settings-manager ubuntu-restricted-extras unity-tweak-tool recordmydesktop wine</p>
-<p>Disable Overlay Scrollbars: gsettings set com.canonical.desktop.interface scrollbar-mode normal</p>
+    <p>sudo apt-get vim zsh leafpad install exfat-utils exfat-fuse git curl vim tree compizconfig-settings-manager
+        ubuntu-restricted-extras unity-tweak-tool recordmydesktop wine</p>
+    <p>Disable Overlay Scrollbars: gsettings set com.canonical.desktop.interface scrollbar-mode normal</p>
 
     <p>
     <ul>
@@ -31,6 +32,13 @@
         <li>Ceti-2 theme (http://software.opensuse.org/download.html?project=home%3AHorst3180&package=ceti-2-theme)</li>
     </ul>
     </p>
+</div>
+<div class="genbox">
+    <p> sudo add-apt-repository ppa:webupd8team/java </p>
+    <p> sudo apt-get update </p>
+
+    <p> sudo apt-get install oracle-java7-installer </p>
+    <p> sudo apt-get install oracle-java8-installer </p>
 </div>
 <div class="genbox">
     <h1>Ubuntu tewak</h1>
@@ -71,8 +79,8 @@
 
     <p>sudo update-alternatives --config javaws</p>
     <p>
-        <p>for firefox support</p>
-        <p>ln -s /usr/lib/jvm/jdk1.8.0/jre/lib/amd64/libnpjp2.so ~/.mozilla/plugins/</p>
+    <p>for firefox support</p>
+    <p>ln -s /usr/lib/jvm/jdk1.8.0/jre/lib/amd64/libnpjp2.so ~/.mozilla/plugins/</p>
     </p>
     <p>
         <a href="http://askubuntu.com/questions/56104/how-can-i-install-sun-oracles-proprietary-java-jdk-6-7-8-or-jre">Details</a>
@@ -98,17 +106,17 @@
     <p>bash install.sh</p>
 
     <p>
-        <h3>zsh extra</h3>
-        <ul>
-            <li>DEFAULT_USER=YourUserName</li>
-            <li>ZSH_THEME="amuse"</li>
-            <li>12 ZSH_THEME="agnoster"</li>
-            <li>plugins=(git zsh-syntax-highlighting colored-man-pages ant autojump aws dircycle tmux)</li>
-            <li>alias s_findDirectory="find /home/sazzad -type d -name "</li>
-            <li>alias s_findFile="find -name "</li>
-            <li>alias s_netlog="sudo nethogs enp1s0"</li>
-            <li>alias ee="exit"</li>
-        </ul>
+    <h3>zsh extra</h3>
+    <ul>
+        <li>DEFAULT_USER=YourUserName</li>
+        <li>ZSH_THEME="amuse"</li>
+        <li>12 ZSH_THEME="agnoster"</li>
+        <li>plugins=(git zsh-syntax-highlighting colored-man-pages ant autojump aws dircycle tmux)</li>
+        <li>alias s_findDirectory="find /home/sazzad -type d -name "</li>
+        <li>alias s_findFile="find -name "</li>
+        <li>alias s_netlog="sudo nethogs enp1s0"</li>
+        <li>alias ee="exit"</li>
+    </ul>
     </p>
 
 </div>
