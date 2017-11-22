@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Git commands</title>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>
+                <h1>command</h1>
+            </td>
+            <td>
+                <h1>Description</h1>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+	        <tr>
+            <td>
+                tmux new -s myname
+            </td>
+            <td>
+                start new with session name
+            </td>
+        </tr>
+        <tr>
+            <td>
+                tmux a
+            </td>
+            <td>
+                attach to a session
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                tmux a -t myname
+            </td>
+            <td>
+                attach to a session
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                tmux ls
+            </td>
+            <td>
+                list of tmux session
+            </td>
+        </tr>
+        <tr>
+            <td>
+                tmux kill-session -t myname
+                <br />
+                tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+                
+            </td>
+            <td>
+                kill a session <br />
+                kill all session
+            </td>
+        </tr>
+        <tr>
+            <td>
+                tabs
+            </td>
+            <td>
+            c  create window<br />
+            w  list windows<br />
+            n  next window<br />
+            p  previous window<br />
+            f  find window<br />
+            ,  name window<br />
+            &  kill window<br />
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Panes
+            </td>
+            <td>
+               %  vertical split<br />
+               "  horizontal split<br />
+               o  swap panes<br />
+               q  show pane numbers<br />
+               x  kill pane<br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ct + b -> d
+                
+            </td>
+            <td>
+                dtach
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ct+b -> page up
+                
+            </td>
+            <td>
+                scroll up and down. press ctrl+c to come to normal mode
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ctrl + arrow (up/down/left/right)
+                
+            </td>
+            <td>
+                move between open panes
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
