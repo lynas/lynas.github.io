@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<div class="container">
+    <h1>Tools i like to use</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>details</th>
+            <th>url</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>tomcat remote debug</td>
+            <td>
+                Add these two line to your bin/setenv.sh <br /><br />
+                
+                export JPDA_ADDRESS="5005"<br />
+                export JPDA_TRANSPORT="dt_socket"
+                
+                <br /><br />
+                start tomcat with following command<br />
+                catalina.sh jpda run<br /><br />
+                
+                in intellij create remote debug run config use default setting
+            </td>
+            <td>https://stackoverflow.com/questions/6733849/remote-debugging-in-intellij-tomcat</td>
+        </tr>
+        </tbody>
+
+    </table>
+
+</div>
+</body>
