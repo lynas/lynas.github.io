@@ -59,6 +59,25 @@
                 svn rm -m "CommitMessage" svn+ssh://user@domain.com/path/to/specific file
             </td>
             <td></td>
+        </tr>   
+        <tr>
+            <td>SVN create branch</td>
+            <td> 
+                svn copy trunk branches/branchName <br />
+                svn ci (commit it to remote)
+            </td>
+            <td>
+                https://www.youtube.com/watch?v=m-PVAtDlNV4
+            </td>
+        </tr>
+        <tr>
+            <td>SVN branch merging</td>
+            <td> 
+                svn merge -rRevesionNumFrom:RevesionNumTo branches\branchName trunk
+            </td>
+            <td>
+                https://www.youtube.com/watch?v=m-PVAtDlNV4
+            </td>
         </tr>    
         </tbody>
 
