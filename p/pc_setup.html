@@ -211,6 +211,18 @@
 
     <p><a href="https://github.com/Centaur/AceJump">AceJump BugFIX</a></p>
 </div>
+<div class="genbox">
+    <h1>jenkins</h1>
+
+    <p>
+        Next, run a container using this image and map data directory from the container to the host; 
+        e.g in the example below /var/jenkins_home from the container is mapped to jenkins/ directory 
+        from the current path on the host. Jenkins 8080 port is also exposed to the host as 49001.
+
+        <b>docker run -d -p 49001:8080 -v $PWD/jenkins:/var/jenkins_home:z -t jenkins</b>
+
+    </p>
+</div>
 
 </body>
 </html>
