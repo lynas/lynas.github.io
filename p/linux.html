@@ -14,6 +14,25 @@
         <thead>
         <tr>
             <td>
+                <h1>Send email from terminal</h1>
+            </td>
+            <td>
+                <h1>sudo apt install sendemail</h1><br />
+                <p>
+                    sendemail -l email.log     \
+                    -f "sender@domain.com"   \
+                    -u "Email Subject 1"     \
+                    -t "receiver@domain.com" \
+                    -s "smtp.gmail.com:587"  \
+                    -o tls=yes \
+                    -xu "youremail@gmail.com" \
+                    -xp "Email Password" \
+                    -o message-file="/tmp/mailbody.txt"
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <h1>Description</h1>
             </td>
             <td>
