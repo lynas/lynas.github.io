@@ -22,31 +22,40 @@
         </tr>
         </thead>
         <tbody>
-	<tr>
+        <tr>
             <td>
-                Setup env varable for all user
+                ubuntu allow connection to port from outside
+            </td>
+            <td>
+                sudo ufw allow from any to any port 3306 proto tcp
+            </td>
+        </tr>
+        <tr>
+        <tr>
+            <td>
+                Setup env variable for all user
             </td>
             <td>
                 vim /etc/environment
             </td>
         </tr>
-	<tr>
+        <tr>
             <td>
                 Screenshot tool for linux
             </td>
             <td>
-                sudo apt install flameshot <br />
-		from terminal run <b>flameshot gui</b>
+                sudo apt install flameshot <br/>
+                from terminal run <b>flameshot gui</b>
             </td>
         </tr>
-	<tr>
+        <tr>
             <td>
                 run somthing at start
             </td>
             <td>
                 add the script to /etc/rc.local
             </td>
-		<tr>
+        <tr>
             <td>
                 get pc ip
             </td>
@@ -54,12 +63,12 @@
                 hostname -I
             </td>
         </tr>
-	<tr>
+        <tr>
             <td>
                 greep without skip
             </td>
             <td>
-                ls -l | grep --color -E '^|java'  
+                ls -l | grep --color -E '^|java'
             </td>
         </tr>
         <tr>
@@ -164,18 +173,18 @@
         <tr>
             <td>Alias</td>
             <td>
-                alias si15="nohup ./devTools/idea15/bin/idea.sh &" <br />
-                alias ccc="tail ~/.zshrc -n 20"<br />
-                alias s_removeTempAndBuild="rm -r .tmp/ && rm -r ../build"<br />
-                alias s_updateSystem="sudo bash ~/uu.sh"<br />
-                alias s_findDirectory="find /home/sazzad -type d -name "<br />
-                alias s_findFile="find -name "<br />
-                alias s_netlog="sudo nethogs enp1s0"<br />
-                alias ee="exit"<br />
-                alias s_antCleanSnapshot="ant clean snapshot"<br />
-                alias s_run_corporate="authbind --deep ant install configure run -Denvironment=dev-sazzad"<br />
-                alias s_logCorporate="tail -f /var/log/campuscom/server.log"<br />
-                alias s_cdToDsi="cd ~/projects/dsi/"<br />
+                alias si15="nohup ./devTools/idea15/bin/idea.sh &" <br/>
+                alias ccc="tail ~/.zshrc -n 20"<br/>
+                alias s_removeTempAndBuild="rm -r .tmp/ && rm -r ../build"<br/>
+                alias s_updateSystem="sudo bash ~/uu.sh"<br/>
+                alias s_findDirectory="find /home/sazzad -type d -name "<br/>
+                alias s_findFile="find -name "<br/>
+                alias s_netlog="sudo nethogs enp1s0"<br/>
+                alias ee="exit"<br/>
+                alias s_antCleanSnapshot="ant clean snapshot"<br/>
+                alias s_run_corporate="authbind --deep ant install configure run -Denvironment=dev-sazzad"<br/>
+                alias s_logCorporate="tail -f /var/log/campuscom/server.log"<br/>
+                alias s_cdToDsi="cd ~/projects/dsi/"<br/>
             </td>
         </tr>
         <tr>
@@ -205,37 +214,37 @@
             </td>
             <td>adb push fileName /sdcard/Download/</td>
         </tr>
-		<tr>
+        <tr>
             <td>
                 tmux commands
             </td>
             <td>
-				c -> create window<br />
-				p -> previous window<br />
-				n -> next window<br />
-				w -> list window<br />
-				, -> change window name <br />
-				tmux new -s sessionName -> create new session<br />
-				tmux ls -> list of session <br />
-				d -> detach from session<br />
-				tmux kill-session -t sessionName -> kill a session<br />
-				tmux  attach -t sessionName -> attach to a session<br />
-			</td>
+                c -> create window<br/>
+                p -> previous window<br/>
+                n -> next window<br/>
+                w -> list window<br/>
+                , -> change window name <br/>
+                tmux new -s sessionName -> create new session<br/>
+                tmux ls -> list of session <br/>
+                d -> detach from session<br/>
+                tmux kill-session -t sessionName -> kill a session<br/>
+                tmux attach -t sessionName -> attach to a session<br/>
+            </td>
         </tr>
-	<tr>
+        <tr>
             <td>install git vim</td>
             <td>
                 search gvim from web
             </td>
         </tr>
-	<tr>
-		<td>
-			find file
-		</td>
-		<td>
-			find ~/bed -type f -name "sectionFactSheet*"  ((bed is location * is auth type))
-		</td>
-	</tr>
+        <tr>
+            <td>
+                find file
+            </td>
+            <td>
+                find ~/bed -type f -name "sectionFactSheet*" ((bed is location * is auth type))
+            </td>
+        </tr>
         </tbody>
     </table>
 </div>
