@@ -22,17 +22,35 @@
         </tr>
         </thead>
         <tbody>
-		
-	<tr>
+
+        <tr>
             <td>
-             Save running image
+                KeyCloak
             </td>
             <td>
-                sudo docker commit 2b7221de1601 sazzad/apache-flask:version1 <br />
-		sudo docker run -it sazzad/apache-flask:version1
+                sudo docker run -p 8081:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin jboss/keycloak
             </td>
         </tr>
-	<tr>
+
+        <tr>
+            <td>
+                Mysql server
+            </td>
+            <td>
+                sudo docker run --name mysql-server -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Save running image
+            </td>
+            <td>
+                sudo docker commit 2b7221de1601 sazzad/apache-flask:version1 <br/>
+                sudo docker run -it sazzad/apache-flask:version1
+            </td>
+        </tr>
+        <tr>
             <td>
                 Get ip address of docker running container
             </td>
@@ -75,12 +93,12 @@
         <tr>
             <td>
                 run nginx on virtual port 80
-                <br />see real port via docker ps -a
-                <br /> this will run nginx in background
+                <br/>see real port via docker ps -a
+                <br/> this will run nginx in background
             </td>
             <td>
                 docker run -d -p 80 nginx
-                <br />
+                <br/>
                 docker run -d -p 8800:80 nginx (specifying port)
             </td>
         </tr>
@@ -113,7 +131,8 @@
                 crete image and connect it with the data store
             </td>
             <td>
-                docker run --name my_mysql -e MYSQL_ROOT_PASSWORD=sSsc3432gd --volumes-from my_datastore -d -p 3306 mysql
+                docker run --name my_mysql -e MYSQL_ROOT_PASSWORD=sSsc3432gd --volumes-from my_datastore -d -p 3306
+                mysql
             </td>
         </tr>
         <tr>
@@ -153,7 +172,7 @@
                 docker attach to a container
             </td>
             <td>
-                docker attach containerID <br /> sudo docker exec -i -t containerID /bin/bash
+                docker attach containerID <br/> sudo docker exec -i -t containerID /bin/bash
             </td>
         </tr>
         <tr>
@@ -196,55 +215,57 @@
                 docker run -it --rm -v $(pwd):/go -u 1000:1000 golang:latest go build -o HelloWorld.out
             </td>
         </tr>
-	<tr>
-		<td>Run docker file</td>
-		<td>docker build -f /path/to/a/Dockerfile . </td>
-	</tr>	
-	<tr>
+        <tr>
+            <td>Run docker file</td>
+            <td>docker build -f /path/to/a/Dockerfile .</td>
+        </tr>
+        <tr>
             <td>
                 DockerFile
             </td>
             <td>
                 <br/><b>#[Using Docker ubuntu latest]</b>
-				<br/>FROM ubuntu:latest
-				<br/>MAINTAINER szlynas@gmail.com
-				<br/><br/><br/><br/>
-				<br/>RUN apt-get update
-				<br/>RUN apt-get install -y wget software-properties-common
-				<br/><br/><br/><br/>
-				<br/><b>#[Setting up working directory]</b>
-				<br/>WORKDIR /root
-				<br/><br/><br/><br/>				
-				<br/><b>#[Setup JAVA]</b>
-				<br/>RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.tar.gz
-				<br/>RUN tar -xvf jdk-8u65-linux-x64.tar.gz
-				<br/>RUN update-alternatives --install /usr/bin/java java /root/jdk1.8.0_65/bin/java 100
-				<br/>RUN update-alternatives --install /usr/bin/javac javac /root/jdk1.8.0_65/bin/javac 100
-				<br/>RUN update-alternatives --install /usr/bin/javaws javaws /root/jdk1.8.0_65/bin/javaws 100
-				<br/>RUN java -version
-				<br/>RUN rm jdk-8u65-linux-x64.tar.gz
-				<br/><br/><br/><br/>
-				<br/><b>#[Setup Maven]</b>
-				<br/>RUN wget http://www.eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
-				<br/>RUN tar -xvf apache-maven-3.3.9-bin.tar.gz
-				<br/>env PATH /root/apache-maven-3.3.9/bin:$PATH
-				<br/>RUN mvn -v
-				<br/>RUN rm apache-maven-3.3.9-bin.tar.gz
-				<br/><br/><br/><br/>
-				<br/><b>#[Setup and run tomcat]</b>
-				<br/>
-				<br/>RUN wget http://www.eu.apache.org/dist/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz
-				<br/>RUN tar -xvf apache-tomcat-8.0.32.tar.gz
-				<br/>RUN rm apache-tomcat-8.0.32.tar.gz
-				<br/>RUN rm -rfv apache-tomcat-8.0.32/webapps/*
-				<br/>
-				<br/>RUN git clone https://github.com/lynas/SpringMvcJavaConfig.git
-				<br/>RUN mvn -f SpringMvcJavaConfig/pom.xml package
-				<br/>RUN mv /root/deployments/ROOT.war apache-tomcat-8.0.32/webapps/
-				<br/><br/><br/><br/>
-				<br/><b>#[To start something on startup]</b>
-				<br/>RUN echo "/root/apache-tomcat-8.0.32/bin/startup.sh" >> /etc/bash.bashrc
-			</td>
+                <br/>FROM ubuntu:latest
+                <br/>MAINTAINER szlynas@gmail.com
+                <br/><br/><br/><br/>
+                <br/>RUN apt-get update
+                <br/>RUN apt-get install -y wget software-properties-common
+                <br/><br/><br/><br/>
+                <br/><b>#[Setting up working directory]</b>
+                <br/>WORKDIR /root
+                <br/><br/><br/><br/>
+                <br/><b>#[Setup JAVA]</b>
+                <br/>RUN wget --no-check-certificate --no-cookies --header "Cookie:
+                oraclelicense=accept-securebackup-cookie"
+                http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.tar.gz
+                <br/>RUN tar -xvf jdk-8u65-linux-x64.tar.gz
+                <br/>RUN update-alternatives --install /usr/bin/java java /root/jdk1.8.0_65/bin/java 100
+                <br/>RUN update-alternatives --install /usr/bin/javac javac /root/jdk1.8.0_65/bin/javac 100
+                <br/>RUN update-alternatives --install /usr/bin/javaws javaws /root/jdk1.8.0_65/bin/javaws 100
+                <br/>RUN java -version
+                <br/>RUN rm jdk-8u65-linux-x64.tar.gz
+                <br/><br/><br/><br/>
+                <br/><b>#[Setup Maven]</b>
+                <br/>RUN wget http://www.eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+                <br/>RUN tar -xvf apache-maven-3.3.9-bin.tar.gz
+                <br/>env PATH /root/apache-maven-3.3.9/bin:$PATH
+                <br/>RUN mvn -v
+                <br/>RUN rm apache-maven-3.3.9-bin.tar.gz
+                <br/><br/><br/><br/>
+                <br/><b>#[Setup and run tomcat]</b>
+                <br/>
+                <br/>RUN wget http://www.eu.apache.org/dist/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz
+                <br/>RUN tar -xvf apache-tomcat-8.0.32.tar.gz
+                <br/>RUN rm apache-tomcat-8.0.32.tar.gz
+                <br/>RUN rm -rfv apache-tomcat-8.0.32/webapps/*
+                <br/>
+                <br/>RUN git clone https://github.com/lynas/SpringMvcJavaConfig.git
+                <br/>RUN mvn -f SpringMvcJavaConfig/pom.xml package
+                <br/>RUN mv /root/deployments/ROOT.war apache-tomcat-8.0.32/webapps/
+                <br/><br/><br/><br/>
+                <br/><b>#[To start something on startup]</b>
+                <br/>RUN echo "/root/apache-tomcat-8.0.32/bin/startup.sh" >> /etc/bash.bashrc
+            </td>
         </tr>
         </tbody>
     </table>
