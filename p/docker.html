@@ -22,6 +22,22 @@
         </tr>
         </thead>
         <tbody>
+         <tr>
+            <td>
+                tail -f log container
+            </td>
+            <td>
+                sudo docker logs -f containerId
+            </td>
+        </tr>
+         <tr>
+            <td>
+                Stop all container
+            </td>
+            <td>
+                sudo docker stop $(sudo docker ps -a -q)
+            </td>
+        </tr>
           <tr>
             <td>
                 Docker pull not working ( network timeout )
