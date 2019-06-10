@@ -22,6 +22,14 @@
         </tr>
         </thead>
         <tbody>
+        <tr>
+            <td>
+                Create db container with specified user password and database
+            </td>
+            <td>
+                sudo docker run -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=dbName -e MYSQL_USER=user -e MYSQL_PASSWORD=password -p 3307:3306 -dit mysql      
+        </td>
+        </tr>
          <tr>
             <td>
                 tail -f log container
