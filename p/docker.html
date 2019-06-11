@@ -87,7 +87,8 @@
                 Get ip address of docker running container
             </td>
             <td>
-                hostname -i
+                hostname -i <br />
+                docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
             </td>
         </tr>
         <tr>
