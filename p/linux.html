@@ -74,6 +74,24 @@ deb http://mirror.dhakacom.com/ubuntu-archive/ eoan-security multiverse<br />
         <tr>
         <tr>
             <td>
+                Mysql
+            </td>
+            <td>
+                <p>
+                sudo apt install mysql-server
+                Get mySql user and pass
+                sudo cat /etc/mysql/debian.cnf
+                </p>
+                <p>
+                    <p>Mysql - System user</p>
+                    <p>CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';</p>
+                    <p>Give system user privileges</p>
+                    <p>GRANT ALL PRIVILEGES ON database_name.* TO 'user'@'localhost';</p>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 Setup env variable for all user
             </td>
             <td>
