@@ -93,6 +93,34 @@
         </tr>
         <tr>
             <td>
+                Mysql 2
+            </td>
+            <td>
+                <p>
+                    -- sudo apt install mysql-server <br />
+                    -- Get mySql user and pass <br />
+                    -- sudo cat /etc/mysql/debian.cnf <br />
+                    -- mysql change root password
+                    -- login as root
+                    -- sudo mysql
+                    -- use mysql
+                    -- UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+                    -- COMMIT;
+                    -- UPDATE mysql.user SET authentication_string=PASSWORD('') where user='root';
+                    -- FLUSH PRIVILEGES;
+                    -- COMMIT;
+                    -- sudo service mysql restart
+                </p>
+                <p>
+                    -- Change mysql server timezone  <br />
+                    SET GLOBAL time_zone = '+6:00';<br />
+                    COMMIT;<br />
+                  
+                </p>
+            </td>
+        </tr>    
+        <tr>
+            <td>
                 Setup env variable for all user
             </td>
             <td>
