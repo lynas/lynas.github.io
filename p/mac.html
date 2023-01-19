@@ -26,18 +26,29 @@
         <tr>
             <td>
                 launchctl unload /System/Library/LaunchDaemons/com.apple.nsurlstoraged.plist
-                <br />launchctl unload /System/Library/LaunchAgents/com.apple.nsurlsessiond.plist
-                <br />sudo launchctl unload /System/Library/LaunchDaemons/com.apple.nsurlsessiond.plist
-                <br />sudo launchctl unload /System/Library/LaunchDaemons/com.apple.nsurlstoraged.plist
+                <br/>launchctl unload /System/Library/LaunchAgents/com.apple.nsurlsessiond.plist
+                <br/>sudo launchctl unload /System/Library/LaunchDaemons/com.apple.nsurlsessiond.plist
+                <br/>sudo launchctl unload /System/Library/LaunchDaemons/com.apple.nsurlstoraged.plist
 
             </td>
             <td>Stop nsurlsessiond from using bandwidth</td>
         </tr>
-		<tr>
-			<td>brew update</td>
-			<td>brew update && brew upgrade --all</td>
-		</tr>
-
+        <tr>
+            <td>brew update</td>
+            <td>brew update && brew upgrade --all</td>
+        </tr>
+        <tr>
+            <td>block site from terminal</td>
+            <td>
+                <ul>
+                    <li>sudo vim /etc/hosts</li>
+                    <li>add following</li>
+                    <li>127.0.0.1   www.facebook.com</li>
+                    <li>Exit vim</li>
+                    <li>sudo dscacheutil -flushcache</li>
+                </ul>
+            </td>
+        </tr>
 
 
         </tbody>
@@ -46,39 +57,5 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
