@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Md Sazzad Islam</title>
+    <style>
+        .container {
+            display: flex;
+            width: 100%;
+            border: 1px solid black; /* Outline the container */
+        }
+
+        .column {
+            flex: 1; /* Each column takes up equal space */
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+            border: 1px solid blue; /* Outline each column */
+        }
+
+        .column2 {
+            /*flex: 1; !* Each column takes up equal space *!*/
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+            border: 1px solid blue; /* Outline each column */
+            flex: 2;
+        }
+
+        .block {
+            flex: 1; /* Flex-grow to take available space */
+            border: 1px solid grey; /* Outline each block */
+            margin: 5px;
+        }
+
+        .block-small {
+            border: 1px solid grey; /* Outline each block */
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="column">
+        <div class="block-small">
+            test 1
+        </div>
+        <div class="block">
+            test 2
+        </div>
+    </div>
+    <div class="column2">
+        <div class="block-small">
+            <p>Md Sazzad Islam</p>
+            <p>Software Engineer</p>
+            <br>
+            <p>Munich, Germany</p>
+            <p>+49 15155858630</p>
+            <p>szlynas@gmail.com</p>
+            <p>Linkedin | GitHub | YouTube</p>
+            <p>
+                Personal Summary
+            </p>
+            <p style="border: 1px solid black"></p>
+            <p>
+                I am a skilled software engineer with proven expertise in using new
+                tools and technical developments to drive improvements throughout
+                an entire software development lifecycle. I have over 10 years of
+                industry experience. I have a good understanding about the Java
+                ecosystem. Worked on a few other platforms as well. I have good
+                knowledge about server management over data center and on the
+                cloud
+            </p>
+        </div>
+        <div class="block">
+            test 4
+        </div>
+    </div>
+</div>
+</body>
+</html>
