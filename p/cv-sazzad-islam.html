@@ -8,7 +8,7 @@
         .container {
             display: flex;
             width: 100%;
-            border: 1px solid black; /* Outline the container */
+            border: 1px solid lightgray; /* Outline the container */
         }
 
         .column {
@@ -16,26 +16,18 @@
             display: flex;
             flex-direction: column;
             margin: 5px;
-            border: 1px solid blue; /* Outline each column */
+            border: 1px solid lightgray;
         }
 
         .column2 {
-            /*flex: 1; !* Each column takes up equal space *!*/
             display: flex;
             flex-direction: column;
             margin: 5px;
-            border: 1px solid blue; /* Outline each column */
+            border: 1px solid lightgray;
             flex: 2;
         }
 
         .block {
-            flex: 1; /* Flex-grow to take available space */
-            border: 1px solid grey; /* Outline each block */
-            margin: 5px;
-        }
-
-        .block-small {
-            border: 1px solid grey; /* Outline each block */
             margin: 5px;
         }
     </style>
@@ -43,15 +35,15 @@
 <body>
 <div class="container">
     <div class="column">
-        <div class="block-small">
-            test 1
+        <div class="block">
+            <img alt="#" src="https://lynas.github.io/p/res/picture-sazzad.png" />
         </div>
         <div class="block">
             test 2
         </div>
     </div>
     <div class="column2">
-        <div class="block-small">
+        <div class="block">
             <p>Md Sazzad Islam</p>
             <p>Software Engineer</p>
             <br>
