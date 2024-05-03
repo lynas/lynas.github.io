@@ -8,27 +8,37 @@
         .container {
             display: flex;
             width: 100%;
-            border: 1px solid lightgray; /* Outline the container */
+            border: 1px solid lightgray;
         }
 
         .column {
-            flex: 1; /* Each column takes up equal space */
+            flex: 1;
             display: flex;
             flex-direction: column;
-            margin: 5px;
-            border: 1px solid lightgray;
         }
 
         .column2 {
             display: flex;
             flex-direction: column;
             margin: 5px;
-            border: 1px solid lightgray;
             flex: 2;
         }
 
         .block {
-            margin: 5px;
+            margin-left: 5px;
+        }
+
+        img {
+            padding: 10px;
+            width: 200px;
+            height: 250px;
+        }
+
+        @media print {
+            img {
+                width: 200px;
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -36,10 +46,36 @@
 <div class="container">
     <div class="column">
         <div class="block">
-            <img alt="#" src="http://lynas.github.io/p/res/picture-sazzad.png" />
+            <img alt="#"
+                 src="http://lynas.github.io/p/res/picture-sazzad.png"
+            />
         </div>
         <div class="block">
-            test 2
+            <p><b>EXPERTISE</b></p>
+            <p><b>Programming Language</b></p>
+            <p>JAVA, KOTLIN, PYTHON</p>
+            <p><b>FRAMEWORK</b></p>
+            <div>
+                <ul>
+                    <li>Spring Framework</li>
+                    <li>Spring Boot</li>
+                    <li>Spring Security</li>
+                    <li>Spring Data</li>
+                </ul>
+            </div>
+            <p><b>DATABASE (SQL)</b></p>
+            <p>MySql, Postgres, Oracle</p>
+            <p>DATABASE (NOSQL)</p>
+            <p>MongoDB, Neo4j</p>
+            <p>CLOUD COMPUTING</p>
+            <div>
+                <ul>
+                    <li>AWS</li>
+                    <li>
+                        Google Cloud Platform
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="column2">
