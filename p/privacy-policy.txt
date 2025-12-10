@@ -1,0 +1,52 @@
+Privacy Policy
+
+Last updated: [12-10-2025]
+
+This Privacy Policy describes how our application (“the App”) handles user data.
+We are committed to protecting your privacy and ensuring transparency about how the App works.
+
+1. Overview
+
+The App is a simple shopping-list tool designed to help users create and manage shopping lists on their device.
+The App is fully offline and does not collect, store, or transmit any personal data.
+
+2. No Internet Connection
+
+The App does not connect to the internet.
+All features work entirely offline.
+
+No data is uploaded to external servers.
+
+No data is shared with third parties.
+
+No analytics or tracking tools are used.
+
+3. Data Storage
+
+The shopping lists you create are stored locally on your device only.
+
+The App does not access or collect your personal information.
+
+You can delete your lists at any time from within the App.
+
+We cannot access or restore your locally stored data.
+
+4. Permissions
+
+The App does not request or require any device permissions.
+It does not access your contacts, photos, files, location, or any other device information.
+
+5. Use by Children
+
+The App is not intended for use by children.
+Anyone can use the App, but it is designed for general audiences and not specifically for children under 13 (or under applicable local age requirements).
+
+6. Changes to This Privacy Policy
+
+We may update this Privacy Policy from time to time.
+If changes are made, the updated version will be available with a new “Last updated” date.
+
+7. Contact
+
+If you have any questions about this Privacy Policy, you may contact us at:
+[szlynas@gmail.com]
