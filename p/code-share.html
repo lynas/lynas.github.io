@@ -1,143 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeShare Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code knowledge share</title>
 
-<style>
-:root {
-    --bg: #0f172a;
-    --surface: #1e293b;
-    --surface-hover: #334155;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --primary: #38bdf8;
-    --border: #475569;
-}
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --text: #e2e8f0;
+            --primary: #38bdf8;
+            --border: #475569;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: Inter, Arial, sans-serif;
-    line-height: 1.6;
-}
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, Arial, sans-serif;
+            line-height: 1.6;
+        }
 
-header {
-    background: var(--surface);
-    padding: 1rem 2rem;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-}
+        header {
+            background: var(--surface);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.header-content {
-    max-width: 1000px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.logo {
-    color: var(--primary);
-    font-size: 1.5rem;
-    font-weight: bold;
-}
+        .logo {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-.search {
-    padding: 0.65rem 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: #0f172a;
-    color: white;
-    width: 250px;
-}
+        .search {
+            padding: 0.7rem;
+            width: 300px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #020617;
+            color: white;
+        }
 
-main {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
 
-.post {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
-    overflow: hidden;
-}
+        .post {
+            margin-bottom: 20px;
+        }
 
-.post-header {
-    padding: 1rem 1.25rem;
-}
+        .genbox {
+            border: 1px solid #00ccff;
+            border-radius: 12px;
+            padding: 20px;
+            background: var(--surface);
+        }
 
-.post-title {
-    font-size: 1.3rem;
-    color: var(--primary);
-}
+        .genbox h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
 
-.post-meta {
-    color: var(--muted);
-    font-size: 0.85rem;
-    margin-top: 0.25rem;
-}
+        .genbox ul {
+            margin-left: 20px;
+        }
 
-.post-content {
-    padding: 0 1.25rem 1.25rem;
-}
+        .genbox a {
+            color: #7dd3fc;
+        }
 
-pre {
-    background: #020617;
-    padding: 1rem;
-    border-radius: 10px;
-    overflow-x: auto;
-    margin-top: 1rem;
-}
+        .ins {
+            color: #ff4d4d;
+            font-weight: bold;
+        }
 
-code {
-    color: #7dd3fc;
-    font-family: Consolas, monospace;
-}
+        .code-container {
+            position: relative;
+            margin-top: 10px;
+        }
 
-.copy-btn {
-    margin-top: 0.75rem;
-    border: none;
-    background: var(--primary);
-    color: #000;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
+        pre {
+            background: #020617;
+            border-radius: 10px;
+            padding: 16px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
 
-.copy-btn:hover {
-    opacity: 0.9;
-}
+        code {
+            color: #7dd3fc;
+            white-space: pre;
+            font-family: Consolas, monospace;
+        }
 
-footer {
-    text-align: center;
-    color: var(--muted);
-    padding: 2rem;
-}
-</style>
+        .copy-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #38bdf8;
+            color: #000;
+            cursor: pointer;
+            padding: 8px 12px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .copy-btn:hover {
+            opacity: .9;
+        }
+
+        .collapsed {
+            max-height: 260px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .collapsed::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 80px;
+            background: linear-gradient(
+                    rgba(2, 6, 23, 0),
+                    rgba(2, 6, 23, 1)
+            );
+        }
+
+        .expand-btn {
+            background: none;
+            border: none;
+            color: #38bdf8;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #94a3b8;
+        }
+
+    </style>
 </head>
 <body>
 
 <header>
     <div class="header-content">
-        <div class="logo">CodeShare Blog</div>
+        <div class="logo">Code knowledge share</div>
+
         <input
-            type="text"
-            id="search"
-            class="search"
-            placeholder="Search posts..."
+                type="text"
+                id="search"
+                class="search"
+                placeholder="Search..."
         >
     </div>
 </header>
@@ -145,13 +185,15 @@ footer {
 <main id="posts">
 
     <article class="post">
-        <div class="post-header">
-            <h2 class="post-title">Zsh setup</h2>
-        </div>
+        <div class="genbox">
+            <h2>Install oh my zsh</h2>
+            <div class="code-container">
 
-        <div class="post-content">
-            <pre><code>
-- Required font setup              
+                <button class="copy-btn">
+                    📋 Copy
+                </button>
+
+                <pre><code>
 git clone https://github.com/powerline/fonts.git
 
 cd to font folder
@@ -181,42 +223,323 @@ alias s_findDirectory="find /home/sazzad -type d -name "
 alias s_findFile="find -name "
 alias s_netlog="sudo nethogs enp1s0"
 alias ee="exit"
-            </code></pre>
+                </code></pre>
 
-            <button class="copy-btn">Copy Code</button>
+            </div>
+
         </div>
+
+    </article>
+
+
+    <!-- VMware -->
+
+    <article class="post">
+
+        <div class="genbox">
+
+            <h2>VMware</h2>
+
+            <div class="code-container">
+
+                <button class="copy-btn">
+                    📋 Copy
+                </button>
+
+                <pre><code>sudo apt install -y open-vm-tools
+
+use caddy to transfer file between ubuntu vm and windows
+
+ifconfig ubuntu
+
+ipconfig windows
+
+Get IP address from both machines.</code></pre>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- Caddy -->
+
+    <article class="post">
+
+        <div class="genbox">
+
+            <h2>Setup Simple HTTP Server</h2>
+
+            <p>
+                <a href="https://github.com/caddyserver/caddy/releases"
+                   target="_blank">
+                    Caddy Releases
+                </a>
+            </p>
+
+            <div class="code-container">
+
+                <button class="copy-btn">
+                    📋 Copy
+                </button>
+
+                <pre><code>./caddy file-server --browse --listen :2015</code></pre>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- ZSH -->
+
+    <article class="post">
+
+        <div class="genbox">
+
+            <h2>Zsh Setup</h2>
+
+            <div class="code-container">
+
+                <button class="copy-btn">
+                    📋 Copy
+                </button>
+
+                <pre><code>Required font setup
+
+git clone https://github.com/powerline/fonts.git
+
+cd fonts
+
+bash install.sh
+
+Change terminal font to:
+Source Code Pro for Powerline
+
+sudo apt-get install zsh
+
+curl -L \
+https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh \
+> install.sh
+
+bash install.sh
+
+Custom theme:
+https://gist.github.com/lynas/236e082326c4ac9ce56e1f6d6133cc5e
+
+Powerlevel10k:
+https://github.com/romkatv/powerlevel10k
+
+DEFAULT_USER=YourUserName
+ZSH_THEME="agnoster"
+
+plugins=(
+git
+zsh-syntax-highlighting
+zsh-autosuggestions
+colored-man-pages
+ant
+autojump
+aws
+dircycle
+tmux
+)
+
+alias s_findDirectory="find /home/sazzad -type d -name "
+alias s_findFile="find -name "
+alias s_netlog="sudo nethogs enp1s0"
+alias ee="exit"</code></pre>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- One Command Setup -->
+
+    <article class="post">
+
+        <div class="genbox">
+
+            <h2>One Command Setup All</h2>
+
+            <div class="code-container">
+
+                <button class="copy-btn">
+                    📋 Copy
+                </button>
+
+                <pre><code>#!/bin/bash
+
+cd
+
+echo "Start"
+
+sudo apt install -y \
+net-tools \
+vim \
+zsh \
+leafpad \
+exfat-utils \
+exfat-fuse \
+git \
+curl \
+tree \
+ubuntu-restricted-extras \
+recordmydesktop
+
+git clone https://github.com/powerline/fonts.git --depth 1
+
+cd fonts
+
+bash install.sh
+
+cd
+
+curl -L \
+https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh \
+> install.sh
+
+bash install.sh</code></pre>
+
+            </div>
+
+        </div>
+
     </article>
 
 </main>
 
 <footer>
-    Built with pure HTML, CSS & JavaScript
+    Built with HTML, CSS and JavaScript
 </footer>
 
 <script>
-// Search functionality
-document.getElementById("search").addEventListener("input", function () {
-    const term = this.value.toLowerCase();
-    const posts = document.querySelectorAll(".post");
 
-    posts.forEach(post => {
-        const text = post.textContent.toLowerCase();
-        post.style.display = text.includes(term) ? "block" : "none";
-    });
-});
+    // Search
+    document.getElementById("search")
+        .addEventListener("input", function () {
 
-// Copy buttons
-document.querySelectorAll(".copy-btn").forEach(button => {
-    button.addEventListener("click", () => {
-        const code = button.parentElement.querySelector("code").innerText;
+            const searchValue =
+                this.value.toLowerCase();
 
-        navigator.clipboard.writeText(code).then(() => {
-            const original = button.textContent;
-            button.textContent = "Copied!";
-            setTimeout(() => button.textContent = original, 1500);
+            document
+                .querySelectorAll(".post")
+                .forEach(post => {
+
+                    const content =
+                        post.textContent.toLowerCase();
+
+                    post.style.display =
+                        content.includes(searchValue)
+                            ? "block"
+                            : "none";
+                });
         });
-    });
-});
+
+
+    // Copy buttons
+    document
+        .querySelectorAll(".copy-btn")
+        .forEach(btn => {
+
+            btn.addEventListener("click", () => {
+
+                const code =
+                    btn.closest(".code-container")
+                        .querySelector("code")
+                        .innerText;
+
+                navigator.clipboard
+                    .writeText(code)
+                    .then(() => {
+
+                        const original =
+                            btn.innerHTML;
+
+                        btn.innerHTML =
+                            "✅ Copied";
+
+                        setTimeout(() => {
+
+                            btn.innerHTML =
+                                original;
+
+                        }, 1500);
+
+                    });
+
+            });
+
+        });
+
+
+    // Auto collapse blocks > 10 lines
+    document
+        .querySelectorAll("pre code")
+        .forEach(code => {
+
+            const lines =
+                code.innerText
+                    .trim()
+                    .split("\n");
+
+            if (lines.length > 10) {
+
+                const pre =
+                    code.parentElement;
+
+                pre.classList.add(
+                    "collapsed"
+                );
+
+                const expandBtn =
+                    document.createElement(
+                        "button"
+                    );
+
+                expandBtn.className =
+                    "expand-btn";
+
+                expandBtn.textContent =
+                    "Show More ▼";
+
+                expandBtn.addEventListener(
+                    "click",
+                    () => {
+
+                        if (
+                            pre.classList.contains(
+                                "collapsed"
+                            )
+                        ) {
+
+                            pre.classList.remove(
+                                "collapsed"
+                            );
+
+                            expandBtn.textContent =
+                                "Show Less ▲";
+
+                        } else {
+
+                            pre.classList.add(
+                                "collapsed"
+                            );
+
+                            expandBtn.textContent =
+                                "Show More ▼";
+                        }
+                    }
+                );
+
+                pre.parentNode.appendChild(
+                    expandBtn
+                );
+            }
+        });
+
 </script>
 
 </body>
