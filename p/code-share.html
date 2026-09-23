@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeShare Blog</title>
+
+<style>
+:root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-hover: #334155;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --primary: #38bdf8;
+    --border: #475569;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: var(--surface);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+}
+
+.header-content {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search {
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #0f172a;
+    color: white;
+    width: 250px;
+}
+
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.post {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.post-header {
+    padding: 1rem 1.25rem;
+}
+
+.post-title {
+    font-size: 1.3rem;
+    color: var(--primary);
+}
+
+.post-meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.post-content {
+    padding: 0 1.25rem 1.25rem;
+}
+
+pre {
+    background: #020617;
+    padding: 1rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+code {
+    color: #7dd3fc;
+    font-family: Consolas, monospace;
+}
+
+.copy-btn {
+    margin-top: 0.75rem;
+    border: none;
+    background: var(--primary);
+    color: #000;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.copy-btn:hover {
+    opacity: 0.9;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 2rem;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="logo">CodeShare Blog</div>
+        <input
+            type="text"
+            id="search"
+            class="search"
+            placeholder="Search posts..."
+        >
+    </div>
+</header>
+
+<main id="posts">
+
+    <article class="post">
+        <div class="post-header">
+            <h2 class="post-title">Zsh setup</h2>
+        </div>
+
+        <div class="post-content">
+            <pre><code>
+- Required font setup              
+git clone https://github.com/powerline/fonts.git
+
+cd to font folder
+
+bash install.sh
+
+in terminal change font to (Source code pro for powerline)
+
+sudo apt-get install zsh
+
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > install.sh
+
+bash install.sh
+
+Custom agnoster theme
+https://gist.github.com/lynas/236e082326c4ac9ce56e1f6d6133cc5e
+
+https://github.com/romkatv/powerlevel10k
+
+
+zsh extra
+DEFAULT_USER=YourUserName
+ZSH_THEME="amuse"
+12 ZSH_THEME="agnoster"
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions colored-man-pages ant autojump aws dircycle tmux)
+alias s_findDirectory="find /home/sazzad -type d -name "
+alias s_findFile="find -name "
+alias s_netlog="sudo nethogs enp1s0"
+alias ee="exit"
+            </code></pre>
+
+            <button class="copy-btn">Copy Code</button>
+        </div>
+    </article>
+
+</main>
+
+<footer>
+    Built with pure HTML, CSS & JavaScript
+</footer>
+
+<script>
+// Search functionality
+document.getElementById("search").addEventListener("input", function () {
+    const term = this.value.toLowerCase();
+    const posts = document.querySelectorAll(".post");
+
+    posts.forEach(post => {
+        const text = post.textContent.toLowerCase();
+        post.style.display = text.includes(term) ? "block" : "none";
+    });
+});
+
+// Copy buttons
+document.querySelectorAll(".copy-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        const code = button.parentElement.querySelector("code").innerText;
+
+        navigator.clipboard.writeText(code).then(() => {
+            const original = button.textContent;
+            button.textContent = "Copied!";
+            setTimeout(() => button.textContent = original, 1500);
+        });
+    });
+});
+</script>
+
+</body>
+</html>
